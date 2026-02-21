@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Wedding of Vara Prasad & Mythri</title>
+  <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
   <!-- Premium Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
@@ -17,8 +17,8 @@
       --gold-light: #f5d9a8;
       --black: #0d0d0d;
       --black-light: #1a1a1a;
-      --cream: #fdfaf5;
       --white: #ffffff;
+      --traditional-red: #8B0000;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,10 +44,27 @@
       transition: opacity 1s ease;
     }
 
+    .monogram-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .ganesha-icon {
+      width: 100px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px var(--gold));
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); opacity: 0.8; }
+    }
+
     .monogram {
       font-family: 'Cinzel', serif;
-      font-size: 80px;
-      margin-bottom: 20px;
+      font-size: 60px;
       background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -60,7 +77,8 @@
     }
 
     .enter-btn {
-      padding: 10px 30px;
+      margin-top: 30px;
+      padding: 12px 40px;
       border: 1px solid var(--gold);
       background: transparent;
       color: var(--gold);
@@ -72,7 +90,7 @@
       transition: all 0.5s ease;
     }
 
-    /* Hero Section */
+    /* Hero Section with Mandap Elements */
     .hero {
       height: 100vh;
       display: flex;
@@ -81,27 +99,26 @@
       align-items: center;
       position: relative;
       text-align: center;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2070');
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                  url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=2070');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    .hero-pretitle {
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      letter-spacing: 6px;
+    .shloka {
+      font-size: 22px;
+      font-style: italic;
       color: var(--gold-light);
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
     }
 
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(40px, 8vw, 85px);
       font-weight: 300;
-      margin: 10px 0;
       color: var(--white);
       text-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
@@ -114,7 +131,24 @@
       margin: -10px 0;
     }
 
-    /* Layout Containers */
+    /* Traditional Patterns */
+    .pattern-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('https://www.transparenttextures.com/patterns/p6.png');
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .mandap-border {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 150px;
+      background: linear-gradient(to bottom, rgba(139, 0, 0, 0.4), transparent);
+      pointer-events: none;
+    }
+
+    /* Content Styling */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -127,135 +161,83 @@
       text-align: center;
       margin-bottom: 60px;
       letter-spacing: 8px;
-      position: relative;
-      padding-bottom: 15px;
+      color: var(--gold);
     }
 
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 100px; height: 1px;
-      background: var(--gold);
-    }
-
-    /* Information Cards */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+    .traditional-symbol {
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      margin: 20px 0;
+      color: var(--gold);
     }
 
     .info-card {
       background: var(--black-light);
       border: 1px solid rgba(212, 175, 55, 0.2);
-      padding: 40px;
+      padding: 50px;
       text-align: center;
-      transition: border 0.5s ease;
+      margin-bottom: 30px;
+      position: relative;
     }
 
-    .info-card:hover {
-      border: 1px solid var(--gold);
+    .info-card::before {
+      content: 'ॐ';
+      position: absolute;
+      top: 10px; left: 10px;
+      font-size: 20px;
+      opacity: 0.3;
     }
 
     .info-card h3 {
       font-family: 'Cinzel', serif;
-      font-size: 18px;
+      font-size: 22px;
       letter-spacing: 4px;
-      margin-bottom: 20px;
-      color: var(--gold-light);
+      margin-bottom: 25px;
+      color: var(--traditional-red);
     }
 
     .info-card p {
-      font-size: 20px;
-      line-height: 1.6;
+      font-size: 24px;
       color: var(--white);
     }
 
-    .info-card .detail {
-      font-size: 16px;
-      color: var(--gold);
-      margin-top: 10px;
-      font-style: italic;
-    }
-
-    /* Countdown Styling */
     .countdown-container {
-      background: var(--black-light);
-      padding: 40px;
-      margin-top: 50px;
-      border-top: 1px solid var(--gold);
-      border-bottom: 1px solid var(--gold);
       display: flex;
       justify-content: center;
       gap: 40px;
+      padding: 50px 0;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
     }
 
-    .count-item {
-      text-align: center;
-    }
+    .count-item { text-align: center; }
+    .count-num { font-family: 'Playfair Display', serif; font-size: 45px; color: var(--white); }
+    .count-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; }
 
-    .count-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 45px;
-      display: block;
-      color: var(--white);
-    }
-
-    .count-label {
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    /* Venue Button */
-    .venue-btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 15px 45px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      text-decoration: none;
-      font-family: 'Cinzel', serif;
-      letter-spacing: 3px;
-      transition: all 0.4s ease;
-    }
-
-    .venue-btn:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    /* Footer */
     footer {
-      padding: 80px 20px;
+      padding: 100px 20px;
       text-align: center;
       background: var(--black-light);
+      border-top: 2px solid var(--gold);
     }
 
-    .footer-names {
-      font-family: 'Playfair Display', serif;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 600px) {
-      .hero-title { font-size: 45px; }
-      .countdown-container { gap: 15px; padding: 20px; }
-      .count-num { font-size: 28px; }
+    .ganesha-footer {
+      width: 60px;
+      margin-bottom: 20px;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
 
-  <!-- Cinematic Loader -->
+  <!-- Cinematic Traditional Loader -->
   <div id="loader">
-    <div class="monogram">VM</div>
-    <button class="enter-btn" id="enter-btn" onclick="startApp()">Tap to Enter</button>
+    <div class="monogram-container">
+      <img src="https://img.icons8.com/ios-filled/100/D4AF37/ganesh.png" alt="Ganesha" class="ganesha-icon" />
+      <div class="monogram">ॐ</div>
+    </div>
+    <button class="enter-btn" id="enter-btn" onclick="startApp()">Enter Ceremony</button>
   </div>
 
   <audio id="bg-music" loop>
@@ -264,88 +246,74 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-pretitle" data-aos="fade-down" data-aos-duration="1500">The Wedding of</div>
-    <h1 class="hero-title" data-aos="zoom-in" data-aos-duration="2000">
+    <div class="pattern-overlay"></div>
+    <div class="mandap-border"></div>
+    
+    <div class="shloka" data-aos="fade-down" data-aos-duration="2000">
+      "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,<br>
+      Mangalam Pundari Kaksha, Mangalaye Tano Hari."
+    </div>
+
+    <h1 class="hero-title" data-aos="zoom-in" data-aos-duration="2500">
       Vara Prasad <span class="hero-and">&</span> Mythri
     </h1>
-    <div class="hero-pretitle" data-aos="fade-up" data-aos-duration="1500" style="margin-top: 20px;">
-      6th March 2026 • Vizianagaram
+    
+    <div style="margin-top: 30px; font-family: 'Cinzel', serif; letter-spacing: 5px;" data-aos="fade-up">
+      WEDDING CEREMONY • 06.03.2026
     </div>
   </section>
 
   <div class="container">
-    <div class="section-title" data-aos="fade-up">Our Story</div>
-    <p style="text-align: center; font-size: 24px; font-style: italic; color: var(--white); line-height: 1.8;" data-aos="fade-up">
-      "True love is a journey that starts at forever and ends at never."
+    <div class="traditional-symbol">ॐ</div>
+    <div class="section-title" data-aos="fade-up">Divine Union</div>
+    
+    <p style="text-align: center; font-size: 22px; line-height: 1.8; color: var(--white); margin-bottom: 80px;" data-aos="fade-up">
+      With the blessings of Lord Ganesha and our ancestors,<br>
+      we invite you to witness the sacred union of our souls.
     </p>
 
-    <div class="card-grid">
-      <!-- Sumuhurtham -->
-      <div class="info-card" data-aos="fade-right">
-        <h3>Sumuhurtham</h3>
-        <p>Friday, 6th March 2026</p>
-        <p style="font-size: 32px; margin: 10px 0;">11:26 p.m.</p>
-        <div class="detail">Chitha Nakshatrayuktha • Vruschika Lagnam</div>
-      </div>
+    <div class="info-card" data-aos="fade-right">
+      <h3>Sumuhurtham</h3>
+      <p>Friday, 6th March 2026</p>
+      <p style="font-size: 36px; margin: 15px 0; color: var(--gold);">11:26 p.m.</p>
+      <div style="font-style: italic; color: var(--gold-light);">Chitha Nakshatrayuktha • Vruschika Lagnam</div>
+    </div>
 
-      <!-- Venue -->
-      <div class="info-card" data-aos="fade-left">
-        <h3>The Venue</h3>
-        <p>S-Convention Hall</p>
-        <div class="detail">Y Junction, Vizianagaram</div>
-        <a href="https://maps.google.com" target="_blank" class="venue-btn">Navigate</a>
-      </div>
+    <div class="info-card" data-aos="fade-left">
+      <h3>The Mandapam</h3>
+      <p>S-Convention Hall</p>
+      <div style="margin-top: 10px; font-size: 18px; color: var(--gold-light);">Y Junction, Vizianagaram</div>
+      <a href="https://maps.google.com" target="_blank" style="display: inline-block; margin-top: 25px; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 30px; font-family: 'Cinzel', serif;">Navigate</a>
     </div>
 
     <!-- Countdown -->
-    <div class="section-title" data-aos="fade-up" style="margin-top: 100px;">Counting Down</div>
+    <div class="section-title" data-aos="fade-up" style="margin-top: 100px;">Sacred Countdown</div>
     <div class="countdown-container" data-aos="zoom-in">
       <div class="count-item"><span class="count-num" id="days">00</span><span class="count-label">Days</span></div>
       <div class="count-item"><span class="count-num" id="hours">00</span><span class="count-label">Hrs</span></div>
       <div class="count-item"><span class="count-num" id="minutes">00</span><span class="count-label">Min</span></div>
       <div class="count-item"><span class="count-num" id="seconds">00</span><span class="count-label">Sec</span></div>
     </div>
-
-    <!-- Dinner -->
-    <div class="info-card" data-aos="fade-up" style="margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
-      <h3>Grand Dinner</h3>
-      <p>Friday, 6th March from 7:00 p.m.</p>
-      <div class="detail">At the Marriage Venue</div>
-    </div>
   </div>
 
   <footer>
-    <div class="footer-names">Vara Prasad & Mythri</div>
-    <p style="color: var(--gold-light); font-size: 14px; letter-spacing: 2px;">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
+    <img src="https://img.icons8.com/ios-filled/100/D4AF37/ganesh.png" alt="Ganesha" class="ganesha-footer" />
+    <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white);">Vara Prasad & Mythri</div>
+    <p style="margin-top: 15px; letter-spacing: 3px; font-size: 12px; color: var(--gold);">BLESS THE COUPLE WITH YOUR PRESENCE</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize Animations
     AOS.init();
-
-    // Loader logic
-    window.onload = () => {
-      const btn = document.getElementById('enter-btn');
-      btn.style.opacity = '1';
-      btn.style.transform = 'translateY(0)';
-    };
-
+    window.onload = () => { document.getElementById('enter-btn').style.opacity = '1'; document.getElementById('enter-btn').style.transform = 'translateY(0)'; };
     function startApp() {
       document.getElementById('loader').style.opacity = '0';
-      setTimeout(() => {
-        document.getElementById('loader').style.display = 'none';
-        document.getElementById('bg-music').play();
-      }, 1000);
+      setTimeout(() => { document.getElementById('loader').style.display = 'none'; document.getElementById('bg-music').play(); }, 1000);
     }
-
-    // Countdown Timer
     const weddingDate = new Date("March 6, 2026 23:26:00").getTime();
     setInterval(function() {
       const now = new Date().getTime();
       const distance = weddingDate - now;
-
       document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
       document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
