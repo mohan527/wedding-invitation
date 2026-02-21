@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolli Wedding Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #fdf0f8 0%, #fce4ec 50%, #fdf0f8 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+      font-family: 'Playfair Display', serif;
+    }
+    .card {
+      background: linear-gradient(160deg, #fffdf9 0%, #fff8f0 100%);
+      border: 2px solid #c9a96e;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(150, 80, 30, 0.18);
+      max-width: 680px;
+      width: 100%;
+      padding: 50px 55px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border: 8px solid transparent;
+      border-image: linear-gradient(45deg, #c9a96e, #f5d9a8, #c9a96e) 1;
+      pointer-events: none;
+    }
+    .corner {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      opacity: 0.3;
+    }
+    .corner-tl { top: 10px; left: 10px; }
+    .corner-tr { top: 10px; right: 10px; transform: scaleX(-1); }
+    .corner-bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+    .corner-br { bottom: 10px; right: 10px; transform: scale(-1); }
+    .corner svg { width: 100%; height: 100%; fill: #c9a96e; }
+    .divider {
+      margin: 18px auto;
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #c9a96e, transparent);
+    }
+    .divider-flower {
+      text-align: center;
+      color: #c9a96e;
+      font-size: 20px;
+      letter-spacing: 10px;
+      margin: 8px 0;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #8B0000, #c9393b);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 6px 24px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 42px;
+      color: #8B0000;
+      margin-bottom: 5px;
+      text-shadow: 1px 1px 3px rgba(139,0,0,0.12);
+    }
+    .subtitle {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #9e7a4a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .intro {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      color: #5a3a1a;
+      line-height: 1.8;
+      margin: 12px 0;
+    }
+    .relation {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #9e7a4a;
+      letter-spacing: 1px;
+      margin: 6px 0 2px;
+    }
+    .name-main {
+      font-family: 'Dancing Script', cursive;
+      font-size: 46px;
+      color: #8B0000;
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+    .name-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #5a3a1a;
+      margin-bottom: 4px;
+    }
+    .with-text {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #c9a96e;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 8px 0;
+    }
+    .section-label {
+      display: inline-block;
+      background: linear-gradient(135deg, #8B0000, #b5292b);
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 20px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+    .section-box {
+      background: rgba(201, 169, 110, 0.08);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      border-radius: 10px;
+      padding: 16px 24px;
+      margin: 14px 0;
+    }
+    .section-date {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: #8B0000;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+    .section-detail {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #7a5c38;
+      font-style: italic;
+      margin: 3px 0;
+    }
+    .venue-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #8B0000;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+    .venue-addr {
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #5a3a1a;
+      margin: 3px 0;
+    }
+    .invited-by {
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      color: #9e7a4a;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 4px;
+    }
+    .host-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #8B0000;
+      font-weight: 700;
+    }
+    .footer-note {
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      color: #b09060;
+      margin-top: 18px;
+      letter-spacing: 1px;
+    }
+    @media (max-width: 600px) {
+      .card { padding: 30px 20px; }
+      .title { font-size: 32px; }
+      .name-main { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Corner decorations -->
+    <div class="corner corner-tl"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
+    <div class="corner corner-tr"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
+    <div class="corner corner-bl"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
+    <div class="corner corner-br"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
+
+    <div class="badge">Wedding Invitation</div>
+
+    <div class="title">Kolli Family</div>
+    <div class="subtitle">cordially invites you</div>
+
+    <div class="divider"></div>
+    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
+    <div class="divider"></div>
+
+    <p class="intro">
+      We solicit your gracious presence with family &amp; friends<br />
+      on the auspicious occasion of the marriage of
+    </p>
+
+    <div style="margin: 20px 0;">
+      <div class="relation">our elder son</div>
+      <div class="name-main">Chi. Vara Prasad</div>
+      <div class="name-sub">S/o Sri Kolli Tata Babu &amp; Smt. Aruna</div>
+
+      <div class="with-text">&#9829; &nbsp; with &nbsp; &#9829;</div>
+
+      <div class="relation">with</div>
+      <div class="name-main">Chi. La. Sow. Mythri</div>
+      <div class="name-sub">(Soniya)</div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
+    <div class="divider"></div>
+
+    <!-- Sumuhurtham -->
+    <div class="section-box">
+      <div class="section-label">Sumuhurtham</div>
+      <div class="section-date">Friday, 6th March 2026 &mdash; 11:26 p.m.</div>
+      <div class="section-detail">Chitha Nakshatrayuktha &bull; Vruschika Lagnam</div>
+    </div>
+
+    <!-- Venue -->
+    <div class="section-box">
+      <div class="section-label">Venue</div>
+      <div class="venue-name">S-Convention Hall</div>
+      <div class="venue-addr">Y Junction, Vizianagaram &mdash; 535005</div>
+    </div>
+
+    <!-- Dinner -->
+    <div class="section-box">
+      <div class="section-label">Dinner</div>
+      <div class="section-date">Friday, 6th March 2026 from 7:00 p.m.</div>
+      <div class="section-detail">At the Marriage Venue</div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
+    <div class="divider"></div>
+
+    <div class="invited-by">Invited by</div>
+    <div class="host-name">Sri Kolli Tata Babu &amp; Smt. Aruna</div>
+
+    <div class="footer-note">Your presence will make this occasion truly memorable.</div>
+
+  </div>
+</body>
+</html>
