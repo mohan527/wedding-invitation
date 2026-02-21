@@ -49,19 +49,6 @@
       text-align: center;
     }
 
-    .ganesha-icon {
-      width: 100px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px var(--gold));
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
-
     .monogram {
       font-family: 'Cinzel', serif;
       font-size: 60px;
@@ -90,7 +77,7 @@
       transition: all 0.5s ease;
     }
 
-    /* Hero Section with Mandap Elements */
+    /* Hero Section */
     .hero {
       height: 100vh;
       display: flex;
@@ -100,7 +87,7 @@
       position: relative;
       text-align: center;
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-                  url('https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=2070');
+                  url('https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/101666616/10469492-91e8-42f0-976b-9c60e34c164a/Image-01-4.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -131,24 +118,7 @@
       margin: -10px 0;
     }
 
-    /* Traditional Patterns */
-    .pattern-overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background-image: url('https://www.transparenttextures.com/patterns/p6.png');
-      opacity: 0.1;
-      pointer-events: none;
-    }
-
-    .mandap-border {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 150px;
-      background: linear-gradient(to bottom, rgba(139, 0, 0, 0.4), transparent);
-      pointer-events: none;
-    }
-
-    /* Content Styling */
+    /* Layout Containers */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -161,15 +131,12 @@
       text-align: center;
       margin-bottom: 60px;
       letter-spacing: 8px;
-      color: var(--gold);
     }
 
-    .traditional-symbol {
-      display: block;
-      text-align: center;
-      font-size: 30px;
-      margin: 20px 0;
-      color: var(--gold);
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
     .info-card {
@@ -179,14 +146,7 @@
       text-align: center;
       margin-bottom: 30px;
       position: relative;
-    }
-
-    .info-card::before {
-      content: 'ॐ';
-      position: absolute;
-      top: 10px; left: 10px;
-      font-size: 20px;
-      opacity: 0.3;
+      overflow: hidden;
     }
 
     .info-card h3 {
@@ -200,6 +160,15 @@
     .info-card p {
       font-size: 24px;
       color: var(--white);
+    }
+
+    /* Traditional Images In Cards */
+    .card-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 1px solid var(--gold);
     }
 
     .countdown-container {
@@ -221,34 +190,25 @@
       background: var(--black-light);
       border-top: 2px solid var(--gold);
     }
-
-    .ganesha-footer {
-      width: 60px;
-      margin-bottom: 20px;
-      opacity: 0.6;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Cinematic Traditional Loader -->
+  <!-- Cinematic Loader -->
   <div id="loader">
     <div class="monogram-container">
-      <img src="https://img.icons8.com/ios-filled/100/D4AF37/ganesh.png" alt="Ganesha" class="ganesha-icon" />
       <div class="monogram">ॐ</div>
     </div>
     <button class="enter-btn" id="enter-btn" onclick="startApp()">Enter Ceremony</button>
   </div>
 
+  <!-- BGM Audio -->
   <audio id="bg-music" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    <source src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/101666616/6b79f6ba-1d60-4d6d-aaca-979b98f48419/Gautham-Meets-Aishu-Bgm.mp3" type="audio/mpeg" />
   </audio>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="pattern-overlay"></div>
-    <div class="mandap-border"></div>
-    
     <div class="shloka" data-aos="fade-down" data-aos-duration="2000">
       "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,<br>
       Mangalam Pundari Kaksha, Mangalaye Tano Hari."
@@ -264,26 +224,26 @@
   </section>
 
   <div class="container">
-    <div class="traditional-symbol">ॐ</div>
     <div class="section-title" data-aos="fade-up">Divine Union</div>
     
-    <p style="text-align: center; font-size: 22px; line-height: 1.8; color: var(--white); margin-bottom: 80px;" data-aos="fade-up">
-      With the blessings of Lord Ganesha and our ancestors,<br>
-      we invite you to witness the sacred union of our souls.
-    </p>
+    <div class="card-grid">
+      <!-- Sumuhurtham Card -->
+      <div class="info-card" data-aos="fade-right">
+        <img src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/101666616/f5dbf75e-a9a3-4a0b-9ca3-162be289745e/Image-01-5.jpg" class="card-img" alt="Feet Tradition" />
+        <h3>Sumuhurtham</h3>
+        <p>Friday, 6th March 2026</p>
+        <p style="font-size: 32px; margin: 10px 0; color: var(--gold);">11:26 p.m.</p>
+        <div style="font-style: italic; color: var(--gold-light);">Chitha Nakshatrayuktha • Vruschika Lagnam</div>
+      </div>
 
-    <div class="info-card" data-aos="fade-right">
-      <h3>Sumuhurtham</h3>
-      <p>Friday, 6th March 2026</p>
-      <p style="font-size: 36px; margin: 15px 0; color: var(--gold);">11:26 p.m.</p>
-      <div style="font-style: italic; color: var(--gold-light);">Chitha Nakshatrayuktha • Vruschika Lagnam</div>
-    </div>
-
-    <div class="info-card" data-aos="fade-left">
-      <h3>The Mandapam</h3>
-      <p>S-Convention Hall</p>
-      <div style="margin-top: 10px; font-size: 18px; color: var(--gold-light);">Y Junction, Vizianagaram</div>
-      <a href="https://maps.google.com" target="_blank" style="display: inline-block; margin-top: 25px; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 30px; font-family: 'Cinzel', serif;">Navigate</a>
+      <!-- Mandapam Card -->
+      <div class="info-card" data-aos="fade-left">
+        <img src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/101666616/b2203115-38b4-4b52-b8b8-477022067c2f/Image-01-1.jpg" class="card-img" alt="Temple" />
+        <h3>The Mandapam</h3>
+        <p>S-Convention Hall</p>
+        <div style="margin-top: 10px; font-size: 18px; color: var(--gold-light);">Y Junction, Vizianagaram</div>
+        <a href="https://maps.google.com" target="_blank" style="display: inline-block; margin-top: 25px; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 10px 30px; font-family: 'Cinzel', serif;">Navigate</a>
+      </div>
     </div>
 
     <!-- Countdown -->
@@ -294,10 +254,21 @@
       <div class="count-item"><span class="count-num" id="minutes">00</span><span class="count-label">Min</span></div>
       <div class="count-item"><span class="count-num" id="seconds">00</span><span class="count-label">Sec</span></div>
     </div>
+
+    <!-- Gallery section with traditional images -->
+    <div class="section-title" data-aos="fade-up" style="margin-top: 100px;">Traditions</div>
+    <div class="card-grid">
+      <div class="info-card" data-aos="fade-up">
+        <img src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/101666616/3297a7a5-c651-40be-bd73-a8f8982a87c7/Image-01-6.jpg" class="card-img" alt="Mandapam" />
+      </div>
+      <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/101666616/38f09923-a602-46a2-938b-b18a1a384f50/Image-01-2.jpg" class="card-img" alt="Gopuram" />
+      </div>
+    </div>
+
   </div>
 
   <footer>
-    <img src="https://img.icons8.com/ios-filled/100/D4AF37/ganesh.png" alt="Ganesha" class="ganesha-footer" />
     <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: var(--white);">Vara Prasad & Mythri</div>
     <p style="margin-top: 15px; letter-spacing: 3px; font-size: 12px; color: var(--gold);">BLESS THE COUPLE WITH YOUR PRESENCE</p>
   </footer>
