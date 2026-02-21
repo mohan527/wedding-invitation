@@ -3,269 +3,354 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kolli Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <title>The Wedding of Vara Prasad & Mythri</title>
+
+  <!-- Premium Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
+
+  <!-- AOS for Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
   <style>
+    :root {
+      --gold: #D4AF37;
+      --gold-light: #f5d9a8;
+      --black: #0d0d0d;
+      --black-light: #1a1a1a;
+      --cream: #fdfaf5;
+      --white: #ffffff;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background: linear-gradient(135deg, #fdf0f8 0%, #fce4ec 50%, #fdf0f8 100%);
-      min-height: 100vh;
+      background-color: var(--black);
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Cinematic Loader Overlay */
+    #loader {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--black);
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
-      padding: 40px 20px;
-      font-family: 'Playfair Display', serif;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 1s ease;
     }
-    .card {
-      background: linear-gradient(160deg, #fffdf9 0%, #fff8f0 100%);
-      border: 2px solid #c9a96e;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(150, 80, 30, 0.18);
-      max-width: 680px;
-      width: 100%;
-      padding: 50px 55px;
-      text-align: center;
+
+    .monogram {
+      font-family: 'Cinzel', serif;
+      font-size: 80px;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s infinite linear;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200px; }
+      100% { background-position: 200px; }
+    }
+
+    .enter-btn {
+      padding: 10px 30px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      letter-spacing: 4px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      overflow: hidden;
-    }
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      border: 8px solid transparent;
-      border-image: linear-gradient(45deg, #c9a96e, #f5d9a8, #c9a96e) 1;
-      pointer-events: none;
-    }
-    .corner {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      opacity: 0.3;
-    }
-    .corner-tl { top: 10px; left: 10px; }
-    .corner-tr { top: 10px; right: 10px; transform: scaleX(-1); }
-    .corner-bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
-    .corner-br { bottom: 10px; right: 10px; transform: scale(-1); }
-    .corner svg { width: 100%; height: 100%; fill: #c9a96e; }
-    .divider {
-      margin: 18px auto;
-      width: 80%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, #c9a96e, transparent);
-    }
-    .divider-flower {
       text-align: center;
-      color: #c9a96e;
-      font-size: 20px;
-      letter-spacing: 10px;
-      margin: 8px 0;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
-    .badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #8B0000, #c9393b);
-      color: #fff;
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      letter-spacing: 3px;
+
+    .hero-pretitle {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 6px;
+      color: var(--gold-light);
       text-transform: uppercase;
-      padding: 6px 24px;
-      border-radius: 30px;
       margin-bottom: 20px;
     }
-    .title {
-      font-family: 'Dancing Script', cursive;
-      font-size: 42px;
-      color: #8B0000;
-      margin-bottom: 5px;
-      text-shadow: 1px 1px 3px rgba(139,0,0,0.12);
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 8vw, 85px);
+      font-weight: 300;
+      margin: 10px 0;
+      color: var(--white);
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
-    .subtitle {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #9e7a4a;
-      letter-spacing: 2px;
+
+    .hero-and {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(20px, 4vw, 35px);
+      color: var(--gold);
+      display: block;
+      margin: -10px 0;
+    }
+
+    /* Layout Containers */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 20px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 60px;
+      letter-spacing: 8px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100px; height: 1px;
+      background: var(--gold);
+    }
+
+    /* Information Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .info-card {
+      background: var(--black-light);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      padding: 40px;
+      text-align: center;
+      transition: border 0.5s ease;
+    }
+
+    .info-card:hover {
+      border: 1px solid var(--gold);
+    }
+
+    .info-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+    }
+
+    .info-card p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--white);
+    }
+
+    .info-card .detail {
+      font-size: 16px;
+      color: var(--gold);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    /* Countdown Styling */
+    .countdown-container {
+      background: var(--black-light);
+      padding: 40px;
+      margin-top: 50px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .count-item {
+      text-align: center;
+    }
+
+    .count-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 45px;
+      display: block;
+      color: var(--white);
+    }
+
+    .count-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 3px;
       text-transform: uppercase;
+    }
+
+    /* Venue Button */
+    .venue-btn {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 15px 45px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 3px;
+      transition: all 0.4s ease;
+    }
+
+    .venue-btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    /* Footer */
+    footer {
+      padding: 80px 20px;
+      text-align: center;
+      background: var(--black-light);
+    }
+
+    .footer-names {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
       margin-bottom: 10px;
     }
-    .intro {
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: #5a3a1a;
-      line-height: 1.8;
-      margin: 12px 0;
-    }
-    .relation {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #9e7a4a;
-      letter-spacing: 1px;
-      margin: 6px 0 2px;
-    }
-    .name-main {
-      font-family: 'Dancing Script', cursive;
-      font-size: 46px;
-      color: #8B0000;
-      line-height: 1.2;
-      margin: 4px 0;
-    }
-    .name-sub {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      color: #5a3a1a;
-      margin-bottom: 4px;
-    }
-    .with-text {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #c9a96e;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin: 8px 0;
-    }
-    .section-label {
-      display: inline-block;
-      background: linear-gradient(135deg, #8B0000, #b5292b);
-      color: #fff;
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 5px 20px;
-      border-radius: 20px;
-      margin-bottom: 8px;
-    }
-    .section-box {
-      background: rgba(201, 169, 110, 0.08);
-      border: 1px solid rgba(201, 169, 110, 0.3);
-      border-radius: 10px;
-      padding: 16px 24px;
-      margin: 14px 0;
-    }
-    .section-date {
-      font-family: 'Playfair Display', serif;
-      font-size: 17px;
-      color: #8B0000;
-      font-weight: 600;
-      margin: 4px 0;
-    }
-    .section-detail {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #7a5c38;
-      font-style: italic;
-      margin: 3px 0;
-    }
-    .venue-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: #8B0000;
-      font-weight: 700;
-      margin: 4px 0;
-    }
-    .venue-addr {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #5a3a1a;
-      margin: 3px 0;
-    }
-    .invited-by {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #9e7a4a;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-top: 20px;
-      margin-bottom: 4px;
-    }
-    .host-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      color: #8B0000;
-      font-weight: 700;
-    }
-    .footer-note {
-      font-family: 'Lato', sans-serif;
-      font-size: 12px;
-      color: #b09060;
-      margin-top: 18px;
-      letter-spacing: 1px;
-    }
+
+    /* Responsive Adjustments */
     @media (max-width: 600px) {
-      .card { padding: 30px 20px; }
-      .title { font-size: 32px; }
-      .name-main { font-size: 34px; }
+      .hero-title { font-size: 45px; }
+      .countdown-container { gap: 15px; padding: 20px; }
+      .count-num { font-size: 28px; }
     }
   </style>
 </head>
 <body>
-  <div class="card">
 
-    <!-- Corner decorations -->
-    <div class="corner corner-tl"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
-    <div class="corner corner-tr"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
-    <div class="corner corner-bl"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
-    <div class="corner corner-br"><svg viewBox="0 0 100 100"><path d="M0,0 Q50,0 100,50 Q50,50 50,100 Q25,75 0,0Z"/></svg></div>
+  <!-- Cinematic Loader -->
+  <div id="loader">
+    <div class="monogram">VM</div>
+    <button class="enter-btn" id="enter-btn" onclick="startApp()">Tap to Enter</button>
+  </div>
 
-    <div class="badge">Wedding Invitation</div>
+  <audio id="bg-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+  </audio>
 
-    <div class="title">Kolli Family</div>
-    <div class="subtitle">cordially invites you</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-pretitle" data-aos="fade-down" data-aos-duration="1500">The Wedding of</div>
+    <h1 class="hero-title" data-aos="zoom-in" data-aos-duration="2000">
+      Vara Prasad <span class="hero-and">&</span> Mythri
+    </h1>
+    <div class="hero-pretitle" data-aos="fade-up" data-aos-duration="1500" style="margin-top: 20px;">
+      6th March 2026 • Vizianagaram
+    </div>
+  </section>
 
-    <div class="divider"></div>
-    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
-    <div class="divider"></div>
-
-    <p class="intro">
-      We solicit your gracious presence with family &amp; friends<br />
-      on the auspicious occasion of the marriage of
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">Our Story</div>
+    <p style="text-align: center; font-size: 24px; font-style: italic; color: var(--white); line-height: 1.8;" data-aos="fade-up">
+      "True love is a journey that starts at forever and ends at never."
     </p>
 
-    <div style="margin: 20px 0;">
-      <div class="relation">our elder son</div>
-      <div class="name-main">Chi. Vara Prasad</div>
-      <div class="name-sub">S/o Sri Kolli Tata Babu &amp; Smt. Aruna</div>
+    <div class="card-grid">
+      <!-- Sumuhurtham -->
+      <div class="info-card" data-aos="fade-right">
+        <h3>Sumuhurtham</h3>
+        <p>Friday, 6th March 2026</p>
+        <p style="font-size: 32px; margin: 10px 0;">11:26 p.m.</p>
+        <div class="detail">Chitha Nakshatrayuktha • Vruschika Lagnam</div>
+      </div>
 
-      <div class="with-text">&#9829; &nbsp; with &nbsp; &#9829;</div>
-
-      <div class="relation">with</div>
-      <div class="name-main">Chi. La. Sow. Mythri</div>
-      <div class="name-sub">(Soniya)</div>
+      <!-- Venue -->
+      <div class="info-card" data-aos="fade-left">
+        <h3>The Venue</h3>
+        <p>S-Convention Hall</p>
+        <div class="detail">Y Junction, Vizianagaram</div>
+        <a href="https://maps.google.com" target="_blank" class="venue-btn">Navigate</a>
+      </div>
     </div>
 
-    <div class="divider"></div>
-    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
-    <div class="divider"></div>
-
-    <!-- Sumuhurtham -->
-    <div class="section-box">
-      <div class="section-label">Sumuhurtham</div>
-      <div class="section-date">Friday, 6th March 2026 &mdash; 11:26 p.m.</div>
-      <div class="section-detail">Chitha Nakshatrayuktha &bull; Vruschika Lagnam</div>
-    </div>
-
-    <!-- Venue -->
-    <div class="section-box">
-      <div class="section-label">Venue</div>
-      <div class="venue-name">S-Convention Hall</div>
-      <div class="venue-addr">Y Junction, Vizianagaram &mdash; 535005</div>
+    <!-- Countdown -->
+    <div class="section-title" data-aos="fade-up" style="margin-top: 100px;">Counting Down</div>
+    <div class="countdown-container" data-aos="zoom-in">
+      <div class="count-item"><span class="count-num" id="days">00</span><span class="count-label">Days</span></div>
+      <div class="count-item"><span class="count-num" id="hours">00</span><span class="count-label">Hrs</span></div>
+      <div class="count-item"><span class="count-num" id="minutes">00</span><span class="count-label">Min</span></div>
+      <div class="count-item"><span class="count-num" id="seconds">00</span><span class="count-label">Sec</span></div>
     </div>
 
     <!-- Dinner -->
-    <div class="section-box">
-      <div class="section-label">Dinner</div>
-      <div class="section-date">Friday, 6th March 2026 from 7:00 p.m.</div>
-      <div class="section-detail">At the Marriage Venue</div>
+    <div class="info-card" data-aos="fade-up" style="margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto;">
+      <h3>Grand Dinner</h3>
+      <p>Friday, 6th March from 7:00 p.m.</p>
+      <div class="detail">At the Marriage Venue</div>
     </div>
-
-    <div class="divider"></div>
-    <div class="divider-flower">&#10047; &#10047; &#10047;</div>
-    <div class="divider"></div>
-
-    <div class="invited-by">Invited by</div>
-    <div class="host-name">Sri Kolli Tata Babu &amp; Smt. Aruna</div>
-
-    <div class="footer-note">Your presence will make this occasion truly memorable.</div>
-
   </div>
+
+  <footer>
+    <div class="footer-names">Vara Prasad & Mythri</div>
+    <p style="color: var(--gold-light); font-size: 14px; letter-spacing: 2px;">WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize Animations
+    AOS.init();
+
+    // Loader logic
+    window.onload = () => {
+      const btn = document.getElementById('enter-btn');
+      btn.style.opacity = '1';
+      btn.style.transform = 'translateY(0)';
+    };
+
+    function startApp() {
+      document.getElementById('loader').style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('bg-music').play();
+      }, 1000);
+    }
+
+    // Countdown Timer
+    const weddingDate = new Date("March 6, 2026 23:26:00").getTime();
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+    }, 1000);
+  </script>
 </body>
 </html>
