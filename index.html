@@ -1,244 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wedding Invitation | Vara Prasad & Mythri</title>
+<main class="container">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<!-- Invitation Written by Parents -->
+<section style="margin-bottom: 100px;" data-aos="fade-up">
+  <p style="font-size: 24px; color: var(--white); text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+    With immense joy and divine blessings, we cordially invite you to the wedding ceremony of our beloved second son,
+    which will be held at our home in the gracious presence of family and friends.
+  </p>
 
-<style>
-:root{
---gold:#D4AF37;
---light-gold:#f5d9a8;
---white:#ffffff;
---overlay:rgba(0,0,0,0.75);
-}
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Cormorant Garamond',serif;
-color:var(--white);
-background:
-linear-gradient(var(--overlay),var(--overlay)),
-url('divine-background.jpg'); /* SINGLE BACKGROUND IMAGE */
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-scroll-behavior:smooth;
-text-align:center;
-}
-
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:80px 20px;
-}
-
-.container{
-max-width:950px;
-}
-
-/* GLOWING OM */
-.om{
-font-size:100px;
-color:var(--gold);
-margin-bottom:30px;
-text-shadow:
-0 0 10px #d4af37,
-0 0 30px #f5d9a8,
-0 0 60px rgba(212,175,55,0.8);
-animation:glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-from{ text-shadow:0 0 10px #d4af37,0 0 30px #f5d9a8;}
-to{ text-shadow:0 0 30px #f5d9a8,0 0 80px #d4af37;}
-}
-
-h1{
-font-family:'Playfair Display',serif;
-font-size:60px;
-color:var(--gold);
-margin:20px 0;
-}
-
-h2{
-font-family:'Cinzel',serif;
-letter-spacing:4px;
-margin:40px 0 20px;
-color:var(--light-gold);
-}
-
-p{
-font-size:22px;
-line-height:1.8;
-margin:15px 0;
-}
-
-.button{
-margin-top:40px;
-padding:15px 40px;
-border:2px solid var(--gold);
-color:var(--gold);
-background:transparent;
-font-size:18px;
-letter-spacing:3px;
-cursor:pointer;
-transition:0.4s;
-}
-
-.button:hover{
-background:var(--gold);
-color:black;
-}
-
-.countdown{
-font-size:40px;
-color:var(--light-gold);
-margin-top:30px;
-}
-
-.shloka{
-font-style:italic;
-color:var(--light-gold);
-margin:40px 0;
-}
-
-.vows{
-text-align:left;
-max-width:800px;
-margin-top:40px;
-}
-
-.vow-item{
-margin-bottom:25px;
-}
-
-.vow-item strong{
-color:var(--light-gold);
-}
-
-footer{
-margin-top:80px;
-font-size:22px;
-}
-</style>
-</head>
-
-<body>
-
-<!-- LANDING PAGE -->
-<section>
-<div class="container">
-<div class="om">ॐ</div>
-<h1>Vara Prasad & Mythri</h1>
-<button class="button" onclick="document.getElementById('countdown-section').scrollIntoView({behavior:'smooth'})">
-Enter Invitation
-</button>
-</div>
+  <p style="margin-top: 30px; font-size: 22px; letter-spacing: 3px; color: var(--gold-light);">
+    [Parents' Name] & [Parents' Name]
+  </p>
 </section>
 
-<!-- COUNTDOWN SECTION -->
-<section id="countdown-section">
-<div class="container">
-<h2>Countdown to the Sacred Wedding</h2>
-<div id="countdown" class="countdown"></div>
+
+<h2 class="section-title" data-aos="fade-up">Divine Union</h2>
+
+<div class="card-grid">
+
+  <!-- Sumuhurtham Card -->
+  <div class="info-card sumuhurtham-card" data-aos="fade-right">
+    <h3>Sumuhurtham</h3>
+    <p>Friday, 6th March 2026</p>
+    <p style="font-family: 'Playfair Display', serif; font-size: 35px; margin: 15px 0;">11:26 p.m.</p>
+    <p style="font-size: 16px; color: var(--gold-light);">
+      Chitha Nakshatrayuktha • Vruschika Lagnam
+    </p>
+  </div>
+
+  <!-- Mandapam -->
+  <div class="info-card" data-aos="fade-left">
+    <img src="image 1.jpeg" alt="Mandapam" class="card-img">
+    <h3>The Mandapam</h3>
+    <p>S-Convention Hall</p>
+    <p style="font-size: 18px;">Y Junction, Vizianagaram</p>
+    <a href="https://maps.google.com" style="display: inline-block; margin-top: 20px; padding: 10px 30px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 2px;">
+      NAVIGATE
+    </a>
+  </div>
+
 </div>
+
+
+<!-- Sacred Countdown -->
+<section style="margin-top: 100px;">
+  <h2 class="section-title" data-aos="fade-up">Sacred Countdown</h2>
+
+  <div class="countdown-container" data-aos="zoom-in">
+    <div class="count-item">
+      <div class="count-num" id="days">00</div>
+      <div class="count-label">Days</div>
+    </div>
+    <div class="count-item">
+      <div class="count-num" id="hours">00</div>
+      <div class="count-label">Hrs</div>
+    </div>
+    <div class="count-item">
+      <div class="count-num" id="minutes">00</div>
+      <div class="count-label">Min</div>
+    </div>
+    <div class="count-item">
+      <div class="count-num" id="seconds">00</div>
+      <div class="count-label">Sec</div>
+    </div>
+  </div>
 </section>
 
-<!-- INVITATION SECTION -->
-<section>
-<div class="container">
 
-<p>
-With immense joy and divine blessings, we cordially invite you to the wedding ceremony of our beloved second son,
-which will be held at our home in the gracious presence of family and friends.
-</p>
-
-<p>
-[Parents' Name] & [Parents' Name]
-</p>
-
-<p class="shloka">
-Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,<br>
-Mangalam Pundari Kaksha, Mangalaye Tano Hari.
-</p>
-
-<h1>Vara Prasad & Mythri</h1>
-<p style="letter-spacing:4px;">WEDDING CEREMONY • 06.03.2026</p>
-
-<h2>The Divine Union</h2>
-<p>
-Two souls destined by divine will unite in sacred matrimony,
-beginning a lifelong journey of love, harmony, and spiritual companionship.
-</p>
-
-<h2>Dinner Details</h2>
-<p>
-Dinner on Friday, 6th March 2026 from 7:00 PM IST onwards at the marriage venue.
-</p>
-
-<h2>Saptapadi – The Seven Sacred Vows</h2>
-
-<p>
-Saptapadi is a significant ritual in Hindu weddings symbolizing the sacred seven steps taken together by the bride and groom. Each step represents a promise that strengthens their lifelong bond.
-</p>
-
-<div class="vows">
-
-<div class="vow-item"><strong>Nourishment and Prosperity</strong> – The couple promises to provide for each other and share their experiences.</div>
-
-<div class="vow-item"><strong>Strength and Health</strong> – They vow to support each other in facing life’s challenges and remain healthy.</div>
-
-<div class="vow-item"><strong>Wealth and Happiness</strong> – The couple promises to share their wealth and happiness equally.</div>
-
-<div class="vow-item"><strong>Family and Children</strong> – They pledge to nurture their family and welcome children with care.</div>
-
-<div class="vow-item"><strong>Seasons and Stability</strong> – The couple vows to stay steady through life’s changes and seasons.</div>
-
-<div class="vow-item"><strong>Loyalty and Friendship</strong> – They commit to being best friends and loyal partners.</div>
-
-<div class="vow-item"><strong>Mutual Respect</strong> – The couple promises to respect each other and uphold mutual dignity.</div>
-
-</div>
-
-<footer>
-<p>
-We humbly seek your gracious presence and heartfelt blessings for the newlyweds as they begin their sacred journey together.
-</p>
-</footer>
-
-</div>
+<!-- Dinner Details -->
+<section style="margin-top: 120px;" data-aos="fade-up">
+  <h2 class="section-title">Dinner Details</h2>
+  <p style="font-size: 24px; color: var(--white); max-width: 800px; margin: 0 auto;">
+    Dinner on Friday, 6th March 2026 from 7:00 PM IST onwards at the marriage venue.
+  </p>
 </section>
 
-<script>
-// Set wedding date (YYYY, MM-1, DD, HH, MM)
-var weddingDate = new Date("March 6, 2026 09:00:00").getTime();
 
-var x = setInterval(function() {
-var now = new Date().getTime();
-var distance = weddingDate - now;
+<!-- Saptapadi Section -->
+<section style="margin-top: 120px;" data-aos="fade-up">
+  <h2 class="section-title">Saptapadi – The Seven Sacred Vows</h2>
 
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  <p style="max-width: 850px; margin: 0 auto 50px auto; font-size: 22px; color: var(--white); line-height: 1.8;">
+    Saptapadi is a significant ritual in Hindu weddings symbolizing the sacred seven steps taken together by the bride and groom. Each step represents a promise that strengthens their lifelong bond.
+  </p>
 
-document.getElementById("countdown").innerHTML =
-days + "d " + hours + "h "
-+ minutes + "m " + seconds + "s ";
+  <div style="max-width: 900px; margin: 0 auto; text-align: left;">
 
-if (distance < 0) {
-clearInterval(x);
-document.getElementById("countdown").innerHTML = "The Wedding Has Begun";
-}
-}, 1000);
-</script>
+    <p><strong>Nourishment and Prosperity</strong> – The couple promises to provide for each other and share their experiences.</p>
+    <br>
+    <p><strong>Strength and Health</strong> – They vow to support each other in facing life’s challenges and remain healthy.</p>
+    <br>
+    <p><strong>Wealth and Happiness</strong> – The couple promises to share their wealth and happiness equally.</p>
+    <br>
+    <p><strong>Family and Children</strong> – They pledge to nurture their family and welcome children with care.</p>
+    <br>
+    <p><strong>Seasons and Stability</strong> – The couple vows to stay steady through life’s changes and seasons.</p>
+    <br>
+    <p><strong>Loyalty and Friendship</strong> – They commit to being best friends and loyal partners.</p>
+    <br>
+    <p><strong>Mutual Respect</strong> – The couple promises to respect each other and uphold mutual dignity.</p>
 
-</body>
-</html>
+  </div>
+</section>
+
+</main>
