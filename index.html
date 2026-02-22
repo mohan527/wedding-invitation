@@ -169,9 +169,9 @@
             z-index: 2;
         }
 
-        /* Sumuhurtham Card with Background Image */
+        /* Sumuhurtham Card - Full Background Image */
         .sumuhurtham-card {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sumuhratam time.jpeg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('sumuhratam time.jpeg');
             background-size: cover;
             background-position: center;
             border: 2px solid var(--gold);
@@ -227,8 +227,8 @@
 
     <div id="loader">
         <div class="monogram-container">
-            <div class="monogram">V & M</div>
-            <button class="enter-btn" id="enter-btn" onclick="startApp()">ENTER</button>
+            <div class="monogram">&#x1F549;</div>
+            <button class="enter-btn" id="enter-btn" onclick="startApp()">Enter Ceremony</button>
         </div>
     </div>
 
@@ -248,7 +248,7 @@
 
     <main class="container">
         <h2 class="section-title" data-aos="fade-up">Divine Union</h2>
-        
+
         <div class="card-grid">
             <!-- Sumuhurtham Card with Background Image -->
             <div class="info-card sumuhurtham-card" data-aos="fade-right">
@@ -294,7 +294,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-        
+
         window.onload = () => {
             document.getElementById('enter-btn').style.opacity = '1';
             document.getElementById('enter-btn').style.transform = 'translateY(0)';
