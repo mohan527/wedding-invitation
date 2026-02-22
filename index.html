@@ -1,105 +1,322 @@
-<main class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
-<!-- Invitation Written by Parents -->
-<section style="margin-bottom: 100px;" data-aos="fade-up">
-<p style="font-size: 24px; color: var(--white); text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.8;">
-With immense joy and divine blessings, we cordially invite you to the wedding ceremony of our beloved second son,
-which will be held at our home in the gracious presence of family and friends.
-</p>
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Cinzel:wght@400..900&display=swap" rel="stylesheet" />
 
-<p style="margin-top: 30px; font-size: 22px; letter-spacing: 3px; color: var(--gold-light);">
-[Parents' Name] & [Parents' Name]
-</p>
-</section>
+    <!-- AOS for Scroll Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #f5d9a8;
+            --black: #0d0d0d;
+            --black-light: #1a1a1a;
+            --white: #ffffff;
+            --traditional-red: #8B0000;
+        }
 
-<h2 class="section-title" data-aos="fade-up">Divine Union</h2>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<div class="card-grid">
+        body {
+            background-color: var(--black);
+            color: var(--gold);
+            font-family: 'Cormorant Garamond', serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-<!-- Sumuhurtham Card -->
-<div class="info-card sumuhurtham-card" data-aos="fade-right">
-<h3>Sumuhurtham</h3>
-<p>Friday, 6th March 2026</p>
-<p style="font-family: 'Playfair Display', serif; font-size: 35px; margin: 15px 0;">11:26 p.m.</p>
-<p style="font-size: 16px; color: var(--gold-light);">
-Chitha Nakshatrayuktha • Vruschika Lagnam
-</p>
-</div>
+        /* Cinematic Loader Overlay */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
 
-<!-- Mandapam -->
-<div class="info-card" data-aos="fade-left">
-<img src="image 1.jpeg" alt="Mandapam" class="card-img">
-<h3>The Mandapam</h3>
-<p>S-Convention Hall</p>
-<p style="font-size: 18px;">Y Junction, Vizianagaram</p>
-<a href="https://maps.google.com" style="display: inline-block; margin-top: 20px; padding: 10px 30px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 2px;">
-NAVIGATE
-</a>
-</div>
+        .monogram-container {
+            position: relative;
+            text-align: center;
+        }
 
-</div>
+        .monogram {
+            font-family: 'Cinzel', serif;
+            font-size: 60px;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s infinite linear;
+        }
 
+        @keyframes shimmer {
+            0% { background-position: -200px; }
+            100% { background-position: 200px; }
+        }
 
-<!-- Sacred Countdown -->
-<section style="margin-top: 100px;">
-<h2 class="section-title" data-aos="fade-up">Sacred Countdown</h2>
+        .enter-btn {
+            margin-top: 30px;
+            padding: 12px 40px;
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            font-family: 'Cinzel', serif;
+            letter-spacing: 4px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
 
-<div class="countdown-container" data-aos="zoom-in">
-<div class="count-item">
-<div class="count-num" id="days">00</div>
-<div class="count-label">Days</div>
-</div>
-<div class="count-item">
-<div class="count-num" id="hours">00</div>
-<div class="count-label">Hrs</div>
-</div>
-<div class="count-item">
-<div class="count-num" id="minutes">00</div>
-<div class="count-label">Min</div>
-</div>
-<div class="count-item">
-<div class="count-num" id="seconds">00</div>
-<div class="count-label">Sec</div>
-</div>
-</div>
-</section>
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('image 4.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
+        .shloka {
+            font-size: 22px;
+            font-style: italic;
+            color: var(--gold-light);
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
 
-<!-- Dinner Details -->
-<section style="margin-top: 120px;" data-aos="fade-up">
-<h2 class="section-title">Dinner Details</h2>
-<p style="font-size: 24px; color: var(--white); max-width: 800px; margin: 0 auto;">
-Dinner on Friday, 6th March 2026 from 7:00 PM IST onwards at the marriage venue.
-</p>
-</section>
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 85px);
+            font-weight: 300;
+            color: var(--white);
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
 
+        .hero-and {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(20px, 4vw, 35px);
+            color: var(--gold);
+            display: block;
+            margin: -10px 0;
+        }
 
-<!-- Saptapadi Section -->
-<section style="margin-top: 120px;" data-aos="fade-up">
-<h2 class="section-title">Saptapadi – The Seven Sacred Vows</h2>
+        /* Layout Containers */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
 
-<p style="max-width: 850px; margin: 0 auto 50px auto; font-size: 22px; color: var(--white); line-height: 1.8;">
-Saptapadi is a significant ritual in Hindu weddings symbolizing the sacred seven steps taken together by the bride and groom. Each step represents a promise that strengthens their lifelong bond.
-</p>
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 60px;
+            letter-spacing: 8px;
+        }
 
-<div style="max-width: 900px; margin: 0 auto; text-align: left;">
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
 
-<p><strong>Nourishment and Prosperity</strong> – The couple promises to provide for each other and share their experiences.</p>
-<br>
-<p><strong>Strength and Health</strong> – They vow to support each other in facing life’s challenges and remain healthy.</p>
-<br>
-<p><strong>Wealth and Happiness</strong> – The couple promises to share their wealth and happiness equally.</p>
-<br>
-<p><strong>Family and Children</strong> – They pledge to nurture their family and welcome children with care.</p>
-<br>
-<p><strong>Seasons and Stability</strong> – The couple vows to stay steady through life’s changes and seasons.</p>
-<br>
-<p><strong>Loyalty and Friendship</strong> – They commit to being best friends and loyal partners.</p>
-<br>
-<p><strong>Mutual Respect</strong> – The couple promises to respect each other and uphold mutual dignity.</p>
+        .info-card {
+            background: var(--black-light);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 50px;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
 
-</div>
-</section>
+        .info-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            color: var(--traditional-red);
+            position: relative;
+            z-index: 2;
+        }
 
-</main>
+        .info-card p {
+            font-size: 24px;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Sumuhurtham Card with Background Image */
+        .sumuhurtham-card {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('sumuhratam time.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: 2px solid var(--gold);
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Traditional Images In Cards */
+        .card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 1px solid var(--gold);
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px 0;
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .count-item {
+            text-align: center;
+        }
+
+        .count-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 45px;
+            color: var(--white);
+        }
+
+        .count-label {
+            font-family: 'Cinzel', serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+
+        footer {
+            padding: 100px 20px;
+            text-align: center;
+            background: var(--black-light);
+            border-top: 2px solid var(--gold);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="monogram-container">
+            <div class="monogram">V & M</div>
+            <button class="enter-btn" id="enter-btn" onclick="startApp()">ENTER</button>
+        </div>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="wedding background.mp3" type="audio/mpeg">
+    </audio>
+
+    <header class="hero">
+        <div data-aos="fade-up" data-aos-duration="2000">
+            <p class="shloka">"Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja, <br> Mangalam Pundari Kaksha, Mangalaye Tano Hari."</p>
+            <h1 class="hero-title">
+                Vara Prasad <span class="hero-and">&</span> Mythri
+            </h1>
+            <p style="letter-spacing: 5px; margin-top: 20px;">WEDDING CEREMONY • 06.03.2026</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2 class="section-title" data-aos="fade-up">Divine Union</h2>
+        
+        <div class="card-grid">
+            <!-- Sumuhurtham Card with Background Image -->
+            <div class="info-card sumuhurtham-card" data-aos="fade-right">
+                <h3>Sumuhurtham</h3>
+                <p>Friday, 6th March 2026</p>
+                <p style="font-family: 'Playfair Display', serif; font-size: 35px; margin: 15px 0;">11:26 p.m.</p>
+                <p style="font-size: 16px; color: var(--gold-light);">Chitha Nakshatrayuktha • Vruschika Lagnam</p>
+            </div>
+
+            <div class="info-card" data-aos="fade-left">
+                <img src="image 1.jpeg" alt="Mandapam" class="card-img">
+                <h3>The Mandapam</h3>
+                <p>S-Convention Hall</p>
+                <p style="font-size: 18px;">Y Junction, Vizianagaram</p>
+                <a href="https://maps.google.com" style="display: inline-block; margin-top: 20px; padding: 10px 30px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 12px; letter-spacing: 2px;">NAVIGATE</a>
+            </div>
+        </div>
+
+        <section style="margin-top: 100px;">
+            <h2 class="section-title" data-aos="fade-up">Sacred Countdown</h2>
+            <div class="countdown-container" data-aos="zoom-in">
+                <div class="count-item"><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
+                <div class="count-item"><div class="count-num" id="hours">00</div><div class="count-label">Hrs</div></div>
+                <div class="count-item"><div class="count-num" id="minutes">00</div><div class="count-label">Min</div></div>
+                <div class="count-item"><div class="count-num" id="seconds">00</div><div class="count-label">Sec</div></div>
+            </div>
+        </section>
+
+        <section style="margin-top: 100px;">
+            <h2 class="section-title" data-aos="fade-up">Traditions</h2>
+            <div class="card-grid">
+                <div class="info-card" data-aos="fade-up"><img src="image 2.jpeg" class="card-img"><h3>Tradition 1</h3></div>
+                <div class="info-card" data-aos="fade-up"><img src="image 3.jpeg" class="card-img"><h3>Tradition 2</h3></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <h2 style="font-family: 'Cinzel', serif; margin-bottom: 20px;">Vara Prasad & Mythri</h2>
+        <p style="letter-spacing: 3px;">BLESS THE COUPLE WITH YOUR PRESENCE</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        window.onload = () => {
+            document.getElementById('enter-btn').style.opacity = '1';
+            document.getElementById('enter-btn').style.transform = 'translateY(0)';
+        };
+
+        function startApp() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('bg-music').play();
+            }, 1000);
+        }
+
+        const weddingDate = new Date("March 6, 2026 23:26:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
