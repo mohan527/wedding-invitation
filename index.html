@@ -6,271 +6,271 @@
   <title>The Royal Wedding | Vara Prasad &amp; Mythri</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600;900&family=Cormorant+Garamond:wght@300;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --gold:#D4AF37;
-      --gold-light:#f5d9a8;
-      --black:#0d0d0d;
-      --white:#ffffff;
-    }
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      background:var(--black);
-      color:var(--gold);
-      font-family:'Cormorant Garamond',serif;
-      overflow-x:hidden;
-      scroll-behavior:smooth;
-    }
-    /* ================= LOADER ================= */
-    #loader{
-      position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url('image 5.jpeg');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      z-index:9999;
-      transition:opacity 1s ease;
-    }
-    .monogram{
-      font-family:'Cinzel',serif;
-      font-size:65px;
-      color:var(--gold);
-    }
-    .enter-btn{
-      margin-top:30px;
-      padding:12px 40px;
-      border:1px solid var(--gold);
-      background:transparent;
-      color:var(--gold);
-      letter-spacing:4px;
-      cursor:pointer;
-      transition:0.4s;
-    }
-    .enter-btn:hover{
-      background:var(--gold);
-      color:black;
-    }
-    /* ================= COUNTDOWN ================= */
-    .countdown{
-      padding:80px 20px 60px;
-      text-align:center;
-      background: linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)), url('image 3.jpeg');
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-    }
-    .countdown-container{
-      display:flex;
-      justify-content:center;
-      gap:40px;
-      flex-wrap:wrap;
-      margin-top:40px;
-    }
-    .count-num{
-      font-family:'Playfair Display',serif;
-      font-size:45px;
-      color:var(--white);
-    }
-    .count-label{
-      letter-spacing:3px;
-      font-size:12px;
-    }
-    /* ================= HERO ================= */
-    .hero{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('image 4.jpeg');
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      padding:20px;
-    }
-    .shloka{
-      font-size:20px;
-      color:var(--gold-light);
-      max-width:600px;
-      margin-bottom:30px;
-    }
-    .hero-title{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(40px,8vw,85px);
-      color:var(--white);
-    }
-    .hero-and{
-      font-family:'Cinzel',serif;
-      color:var(--gold);
-      display:block;
-      margin:-10px 0;
-    }
-    /* ================= DIVINE UNION ================= */
-    .divine-section{
-      position:relative;
-      background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('image 2.jpeg');
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-      padding:140px 20px;
-      text-align:center;
-    }
-    .section-title{
-      font-family:'Cinzel',serif;
-      font-size:30px;
-      letter-spacing:6px;
-      margin-bottom:60px;
-    }
-    .divine-block{
-      margin:60px 0;
-    }
-    .divine-block h3{
-      letter-spacing:4px;
-      margin-bottom:20px;
-    }
-    .divine-block p{
-      font-size:22px;
-      color:var(--white);
-      margin:8px 0;
-    }
-    .highlight-time{
-      font-family:'Playfair Display',serif;
-      font-size:42px;
-      color:var(--gold-light);
-    }
-    .divider{
-      width:120px;
-      height:1px;
-      background:var(--gold);
-      margin:50px auto;
-      opacity:0.6;
-    }
-    .nav-btn{
-      display:inline-block;
-      margin-top:20px;
-      padding:10px 30px;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      text-decoration:none;
-      letter-spacing:2px;
-      transition:0.4s;
-    }
-    .nav-btn:hover{
-      background:var(--gold);
-      color:black;
-    }
-    /* ================= FOOTER ================= */
-    footer{
-      padding:100px 20px;
-      text-align:center;
-      background:#111;
-      border-top:1px solid var(--gold);
-    }
+  :root{
+  --gold:#D4AF37;
+  --gold-light:#f5d9a8;
+  --black:#0d0d0d;
+  --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+  background:var(--black);
+  color:var(--gold);
+  font-family:'Cormorant Garamond',serif;
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+  }
+  /* ================= LOADER ================= */
+  #loader{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url('image 5.jpeg');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
+  transition:opacity 1s ease;
+  }
+  .monogram{
+  font-family:'Cinzel',serif;
+  font-size:65px;
+  color:var(--gold);
+  }
+  .enter-btn{
+  margin-top:30px;
+  padding:12px 40px;
+  border:1px solid var(--gold);
+  background:transparent;
+  color:var(--gold);
+  letter-spacing:4px;
+  cursor:pointer;
+  transition:0.4s;
+  }
+  .enter-btn:hover{
+  background:var(--gold);
+  color:black;
+  }
+  /* ================= COUNTDOWN ================= */
+  .countdown{
+  padding:80px 20px 60px;
+  text-align:center;
+  background: linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)), url('image 3.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  }
+  .countdown-container{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-top:40px;
+  }
+  .count-num{
+  font-family:'Playfair Display',serif;
+  font-size:45px;
+  color:var(--white);
+  }
+  .count-label{
+  letter-spacing:3px;
+  font-size:12px;
+  }
+  /* ================= HERO ================= */
+  .hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('image 4.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  padding:20px;
+  }
+  .shloka{
+  font-size:20px;
+  color:var(--gold-light);
+  max-width:600px;
+  margin-bottom:30px;
+  }
+  .hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(40px,8vw,85px);
+  color:var(--white);
+  }
+  .hero-and{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  display:block;
+  margin:-10px 0;
+  }
+  /* ================= DIVINE UNION ================= */
+  .divine-section{
+  position:relative;
+  background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('image 2.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  padding:140px 20px;
+  text-align:center;
+  }
+  .section-title{
+  font-family:'Cinzel',serif;
+  font-size:30px;
+  letter-spacing:6px;
+  margin-bottom:60px;
+  }
+  .divine-block{
+  margin:60px 0;
+  }
+  .divine-block h3{
+  letter-spacing:4px;
+  margin-bottom:20px;
+  }
+  .divine-block p{
+  font-size:22px;
+  color:var(--white);
+  margin:8px 0;
+  }
+  .highlight-time{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  color:var(--gold-light);
+  }
+  .divider{
+  width:120px;
+  height:1px;
+  background:var(--gold);
+  margin:50px auto;
+  opacity:0.6;
+  }
+  .nav-btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 30px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+  letter-spacing:2px;
+  transition:0.4s;
+  }
+  .nav-btn:hover{
+  background:var(--gold);
+  color:black;
+  }
+  /* ================= FOOTER ================= */
+  footer{
+  padding:100px 20px;
+  text-align:center;
+  background:#111;
+  border-top:1px solid var(--gold);
+  }
   </style>
 </head>
 <body>
-
+  
   <!-- LOADER -->
   <div id="loader">
-    <div class="monogram">&#x1F549;</div>
-    <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
+  <div class="monogram">&#x1F549;</div>
+  <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
   </div>
-
+  
   <audio id="bg-music" loop>
-    <source src="wedding background.mp3" type="audio/mpeg">
+  <source src="wedding background.mp3" type="audio/mpeg">
   </audio>
-
+  
   <!-- SACRED COUNTDOWN (TOP) -->
   <section class="countdown">
-    <h2 class="section-title">Sacred Countdown</h2>
-    <div class="countdown-container">
-      <div>
-        <div class="count-num" id="days">00</div>
-        <div class="count-label">Days</div>
-      </div>
-      <div>
-        <div class="count-num" id="hours">00</div>
-        <div class="count-label">Hours</div>
-      </div>
-      <div>
-        <div class="count-num" id="minutes">00</div>
-        <div class="count-label">Minutes</div>
-      </div>
-      <div>
-        <div class="count-num" id="seconds">00</div>
-        <div class="count-label">Seconds</div>
-      </div>
-    </div>
+  <h2 class="section-title">Sacred Countdown</h2>
+  <div class="countdown-container">
+  <div>
+  <div class="count-num" id="days">00</div>
+  <div class="count-label">Days</div>
+  </div>
+  <div>
+  <div class="count-num" id="hours">00</div>
+  <div class="count-label">Hours</div>
+  </div>
+  <div>
+  <div class="count-num" id="minutes">00</div>
+  <div class="count-label">Minutes</div>
+  </div>
+  <div>
+  <div class="count-num" id="seconds">00</div>
+  <div class="count-label">Seconds</div>
+  </div>
+  </div>
   </section>
-
+  
   <!-- HERO -->
   <header class="hero">
-    <p class="shloka">
-      "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,
-      Mangalam Pundari Kaksha, Mangalaye Tano Hari."
-    </p>
-    <div class="divider"></div>
-    <h1 class="hero-title">
-      Vara Prasad <span class="hero-and">&amp;</span> Mythri
-    </h1>
-    <p style="letter-spacing:5px;margin-top:20px;">
-      WEDDING CEREMONY &bull; 06.03.2026
-    </p>
+  <p class="shloka">
+  "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,
+  Mangalam Pundari Kaksha, Mangalaye Tano Hari."
+  </p>
+  <div class="divider"></div>
+  <h1 class="hero-title">
+  Vara Prasad <span class="hero-and">&amp;</span> Mythri
+  </h1>
+  <img src="Wedding .jpg" alt="Wedding" style="max-width:80%;border-radius:10px;margin-top:20px;border:2px solid var(--gold);">
+  <p style="letter-spacing:5px;margin-top:20px;">
+  WEDDING CEREMONY &bull; 06.03.2026
+  </p>
   </header>
-
+  
   <!-- DIVINE UNION -->
   <section class="divine-section">
-    <h2 class="section-title">Divine Union</h2>
-    <div class="divine-block">
-      <h3>Sumuhurtham</h3>
-      <p>Friday, 6th March 2026</p>
-      <p class="highlight-time">11:26 p.m.</p>
-      <p>Chitha Nakshatrayuktha &bull; Vruschika Lagnam</p>
-    </div>
-    <div class="divider"></div>
-    <div class="divine-block">
-      <h3>The Mandapam</h3>
-      <p>S-Convention Hall</p>
-      <p>Y Junction, Vizianagaram</p>
-      <a href="https://maps.google.com" class="nav-btn">Navigate</a>
-    </div>
+  <h2 class="section-title">Divine Union</h2>
+  <div class="divine-block">
+  <h3>Sumuhurtham</h3>
+  <p>Friday, 6th March 2026</p>
+  <p class="highlight-time">11:26 p.m.</p>
+  <p>Chitha Nakshatrayuktha &bull; Vruschika Lagnam</p>
+  </div>
+  <div class="divider"></div>
+  <div class="divine-block">
+  <h3>The Mandapam</h3>
+  <p>S-Convention Hall</p>
+  <p>Y Junction, Vizianagaram</p>
+  <a href="https://maps.google.com" class="nav-btn">Navigate</a>
+  </div>
   </section>
-
+  
   <!-- FOOTER -->
   <footer>
-    <h2 style="font-family:'Cinzel',serif;margin-bottom:20px;">
-      Vara Prasad &amp; Mythri
-    </h2>
-    <p style="letter-spacing:3px;">
-      BLESS THE COUPLE WITH YOUR PRESENCE
-    </p>
+  <h2 style="font-family:'Cinzel',serif;margin-bottom:20px;">
+  Vara Prasad &amp; Mythri
+  </h2>
+  <p style="letter-spacing:3px;">
+  BLESS THE COUPLE WITH YOUR PRESENCE
+  </p>
   </footer>
-
+  
   <script>
-    function startApp(){
-      document.getElementById('loader').style.opacity='0';
-      setTimeout(()=>{
-        document.getElementById('loader').style.display='none';
-        document.getElementById('bg-music').play();
-      },1000);
-    }
-
-    const weddingDate=new Date("March 6, 2026 23:26:00").getTime();
-
-    setInterval(()=>{
-      const now=new Date().getTime();
-      const distance=weddingDate-now;
-      document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
-      document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-      document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
-      document.getElementById("seconds").innerText=Math.floor((distance%(1000*60))/1000);
-    },1000);
+  function startApp(){
+  document.getElementById('loader').style.opacity='0';
+  setTimeout(()=>{
+  document.getElementById('loader').style.display='none';
+  document.getElementById('bg-music').play();
+  },1000);
+  }
+  
+  const weddingDate=new Date("March 6, 2026 23:26:00").getTime();
+  
+  setInterval(()=>{
+  const now=new Date().getTime();
+  const distance=weddingDate-now;
+  document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
+  document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+  document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
+  document.getElementById("seconds").innerText=Math.floor((distance%(1000*60))/1000);
+  },1000);
   </script>
-
-</body>
+ </body>
 </html>
