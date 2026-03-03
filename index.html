@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -23,6 +23,7 @@ url("Full background .jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
+background-repeat:no-repeat;
 font-family:'Cormorant Garamond',serif;
 color:var(--primary);
 overflow-x:hidden;
@@ -69,42 +70,20 @@ background:var(--accent);
 color:black;
 }
 
-/* ===== SECTION ===== */
+/* ===== GENERAL SECTIONS ===== */
 section, header, footer{
 padding:60px 20px;
 text-align:center;
 }
 
-/* ===== BRIDE & GROOM STYLE ===== */
-.role-text{
-font-family:'Great Vibes', cursive;
-font-size:28px;
-color:var(--soft);
-margin-bottom:10px;
-}
-
-.hero-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(34px,7vw,60px);
-color:var(--white);
-line-height:1.1;
-margin:10px 0;
-}
-
-.hero-and{
-display:block;
-color:var(--accent);
-font-family:'Cinzel',serif;
-}
-
-.ceremony-text{
-letter-spacing:3px;
-font-size:14px;
-color:var(--accent);
-margin-top:10px;
-}
-
 /* ===== COUNTDOWN ===== */
+.section-title{
+font-family:'Cinzel',serif;
+font-size:26px;
+letter-spacing:4px;
+margin-bottom:25px;
+}
+
 .countdown-container{
 display:flex;
 justify-content:center;
@@ -124,7 +103,47 @@ letter-spacing:2px;
 color:var(--soft);
 }
 
-/* ===== DIVINE ===== */
+/* ===== ROYAL NAMES ===== */
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(42px,8vw,72px);
+line-height:1.1;
+margin:20px 0;
+background: linear-gradient(90deg, #F1E8D8, #BFA46F);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-shadow: 0 3px 15px rgba(0,0,0,0.6);
+letter-spacing:1px;
+}
+
+.hero-and{
+display:block;
+font-family:'Cinzel',serif;
+font-size:30px;
+color:var(--accent);
+margin:8px 0;
+text-shadow:0 0 12px rgba(191,164,111,0.6);
+}
+
+.hero-title::after{
+content:"";
+display:block;
+width:120px;
+height:1px;
+background:var(--accent);
+margin:14px auto 0;
+opacity:0.6;
+}
+
+/* ===== CEREMONY TEXT ===== */
+.ceremony-text{
+letter-spacing:4px;
+font-size:14px;
+color:var(--accent);
+margin-top:15px;
+}
+
+/* ===== DIVINE DETAILS ===== */
 .divine-block{
 margin:30px 0;
 }
@@ -149,7 +168,7 @@ color:var(--soft);
 
 .nav-btn{
 display:inline-block;
-margin-top:10px;
+margin-top:12px;
 padding:8px 25px;
 border:1px solid var(--accent);
 color:var(--accent);
@@ -163,6 +182,10 @@ color:black;
 }
 
 /* ===== FOOTER ===== */
+footer{
+padding-bottom:80px;
+}
+
 .invite-line{
 max-width:600px;
 margin:20px auto 0;
@@ -180,13 +203,12 @@ line-height:1.6;
 <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
 </div>
 
-<!-- AUDIO -->
 <audio id="bg-music" loop>
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
 
 <section>
-<h2 style="font-family:'Cinzel',serif;letter-spacing:4px;">Sacred Countdown</h2>
+<h2 class="section-title">Sacred Countdown</h2>
 <div class="countdown-container">
 <div><div class="count-num" id="days"></div><div class="count-label">Days</div></div>
 <div><div class="count-num" id="hours"></div><div class="count-label">Hours</div></div>
@@ -196,8 +218,6 @@ line-height:1.6;
 </section>
 
 <header>
-<div class="role-text">Bride & Groom</div>
-
 <h1 class="hero-title">
 Vara Prasad
 <span class="hero-and">&</span>
@@ -210,7 +230,7 @@ WEDDING CEREMONY • 06.03.2026
 </header>
 
 <section>
-<h2 style="font-family:'Cinzel',serif;letter-spacing:4px;">Divine Union</h2>
+<h2 class="section-title">Divine Union</h2>
 
 <div class="divine-block">
 <h3>Sumuhurtham</h3>
