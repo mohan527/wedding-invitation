@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
+<!-- Preload Background Image -->
+<link rel="preload" as="image" href="Full background .JPG">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600;900&family=Cormorant+Garamond:wght@300;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -25,9 +28,9 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* ===== SHARED BACKGROUND ===== */
+/* ===== SHARED BACKGROUND (Improved Visibility) ===== */
 .shared-bg{
-background: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url("Full background .JPG");
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url("Full background .JPG");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
@@ -38,7 +41,7 @@ background-attachment:fixed;
 position:fixed;
 top:0; left:0;
 width:100%; height:100%;
-background: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url("Full background .JPG");
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url("Full background .JPG");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -125,6 +128,14 @@ font-family:'Cinzel',serif;
 color:var(--gold);
 display:block;
 margin:-10px 0;
+}
+
+.hero img{
+max-width:80%;
+border-radius:10px;
+margin-top:20px;
+border:2px solid var(--gold);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* ================= DIVINE UNION ================= */
@@ -248,8 +259,7 @@ Mangalam Pundari Kaksha, Mangalaye Tano Hari."
 Vara Prasad <span class="hero-and">&</span> Mythri
 </h1>
 
-<img src="Wedding.jpg" alt="Wedding"
-style="max-width:80%;border-radius:10px;margin-top:20px;border:2px solid var(--gold);">
+<img src="Wedding.jpg" alt="Wedding">
 
 <p style="letter-spacing:5px;margin-top:20px;">
 WEDDING CEREMONY • 06.03.2026
@@ -275,7 +285,13 @@ WEDDING CEREMONY • 06.03.2026
 <h3>The Mandapam</h3>
 <p>S-Convention Hall</p>
 <p>Y Junction, Vizianagaram</p>
-<a href="https://maps.google.com" class="nav-btn">Navigate</a>
+
+<a href="https://maps.app.goo.gl/Kjtn8bB1ppJVdCCVA?g_st=iw"
+   class="nav-btn"
+   target="_blank">
+   Navigate
+</a>
+
 </div>
 
 </section>
