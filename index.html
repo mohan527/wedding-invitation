@@ -29,7 +29,7 @@ color:var(--primary);
 overflow-x:hidden;
 }
 
-/* ===== LOADER ===== */
+/* LOADER */
 #loader{
 position:fixed;
 top:0;left:0;
@@ -70,18 +70,18 @@ background:var(--accent);
 color:black;
 }
 
-/* ===== GENERAL SECTIONS ===== */
+/* SECTIONS */
 section, header, footer{
 padding:60px 20px;
 text-align:center;
 }
 
-/* ===== COUNTDOWN ===== */
 .section-title{
 font-family:'Cinzel',serif;
 font-size:26px;
 letter-spacing:4px;
 margin-bottom:25px;
+transition:0.5s ease;
 }
 
 .countdown-container{
@@ -103,7 +103,6 @@ letter-spacing:2px;
 color:var(--soft);
 }
 
-/* ===== ROYAL NAMES ===== */
 .hero-title{
 font-family:'Playfair Display',serif;
 font-size:clamp(42px,8vw,72px);
@@ -112,8 +111,6 @@ margin:20px 0;
 background: linear-gradient(90deg, #F1E8D8, #BFA46F);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-text-shadow: 0 3px 15px rgba(0,0,0,0.6);
-letter-spacing:1px;
 }
 
 .hero-and{
@@ -122,20 +119,8 @@ font-family:'Cinzel',serif;
 font-size:30px;
 color:var(--accent);
 margin:8px 0;
-text-shadow:0 0 12px rgba(191,164,111,0.6);
 }
 
-.hero-title::after{
-content:"";
-display:block;
-width:120px;
-height:1px;
-background:var(--accent);
-margin:14px auto 0;
-opacity:0.6;
-}
-
-/* ===== CEREMONY TEXT ===== */
 .ceremony-text{
 letter-spacing:4px;
 font-size:14px;
@@ -143,7 +128,6 @@ color:var(--accent);
 margin-top:15px;
 }
 
-/* ===== DIVINE DETAILS ===== */
 .divine-block{
 margin:30px 0;
 }
@@ -181,7 +165,6 @@ background:var(--accent);
 color:black;
 }
 
-/* ===== FOOTER ===== */
 footer{
 padding-bottom:80px;
 }
@@ -200,7 +183,7 @@ line-height:1.6;
 
 <div id="loader">
 <div class="monogram">ॐ</div>
-<button class="enter-btn" onclick="startApp()">Kolli`s Invitation</button>
+<button class="enter-btn" onclick="startApp()">Kolli's Invitation</button>
 </div>
 
 <audio id="bg-music" loop>
@@ -273,26 +256,44 @@ function startApp(){
 document.getElementById('loader').style.opacity='0';
 setTimeout(()=>{
 document.getElementById('loader').style.display='none';
-
-var music = document.getElementById('bg-music');
-music.play().catch(function(error){
-console.log("Autoplay blocked:", error);
-});
-
+document.getElementById('bg-music').play().catch(()=>{});
 },1000);
 }
 
-const weddingDate=new Date("March 6, 2026 23:26:00").getTime();
+const weddingDate = new Date("March 6, 2026 23:26:00").getTime();
+let switched = false;
 
 setInterval(()=>{
-const now=new Date().getTime();
-const distance=weddingDate-now;
+const now = new Date().getTime();
+let distance = weddingDate - now;
+let title = document.querySelector(".section-title");
 
-document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
-document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
-document.getElementById("seconds").innerText=Math.floor((distance%(1000*60))/1000);
+if(distance > 0){
+title.innerText = "Sacred Countdown";
+updateTimer(distance);
+}else{
+if(!switched){
+switched = true;
+title.innerHTML = "✨ A New Journey Started From Here ✨";
+}
+let marriedTime = now - weddingDate;
+updateTimer(marriedTime);
+}
 },1000);
+
+function updateTimer(time){
+document.getElementById("days").innerText =
+Math.floor(time/(1000*60*60*24));
+
+document.getElementById("hours").innerText =
+Math.floor((time%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").innerText =
+Math.floor((time%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").innerText =
+Math.floor((time%(1000*60))/1000);
+}
 </script>
 
 </body>
