@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
-<!-- Preload Background -->
 <link rel="preload" as="image" href="Full background .jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600;900&family=Cormorant+Garamond:wght@300;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
@@ -30,7 +29,7 @@ scroll-behavior:smooth;
 
 /* ===== SHARED BACKGROUND ===== */
 .shared-bg{
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
 url("Full background .jpg");
 background-size:cover;
 background-position:center;
@@ -42,13 +41,14 @@ background-attachment:fixed;
 position:fixed;
 top:0; left:0;
 width:100%; height:100%;
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
 url("Full background .jpg");
 background-size:cover;
 background-position:center;
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
+padding-top:120px;
 flex-direction:column;
 z-index:9999;
 transition:opacity 1s ease;
@@ -209,17 +209,21 @@ border-top:1px solid var(--gold);
 
 <body>
 
+<!-- LOADER -->
 <div id="loader">
 <div class="monogram">&#x1F549;</div>
 <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
 </div>
 
+<!-- MUSIC (UNCHANGED) -->
 <audio id="bg-music" loop>
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
 
+<!-- COUNTDOWN -->
 <section class="countdown shared-bg">
 <h2 class="section-title">Sacred Countdown</h2>
+
 <div class="countdown-container">
 <div><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
 <div><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
@@ -228,6 +232,7 @@ border-top:1px solid var(--gold);
 </div>
 </section>
 
+<!-- HERO -->
 <header class="hero shared-bg">
 <p class="shloka">
 "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,
@@ -240,13 +245,14 @@ Mangalam Pundari Kaksha, Mangalaye Tano Hari."
 Vara Prasad <span class="hero-and">&</span> Mythri
 </h1>
 
-<img src="Wedding.jpg" alt="Wedding">
+<img src="wedding.jpg" alt="Wedding">
 
 <p style="letter-spacing:5px;margin-top:20px;">
 WEDDING CEREMONY • 06.03.2026
 </p>
 </header>
 
+<!-- DIVINE UNION -->
 <section class="divine-section shared-bg">
 <h2 class="section-title">Divine Union</h2>
 
@@ -265,19 +271,32 @@ WEDDING CEREMONY • 06.03.2026
 <p>Y Junction, Vizianagaram</p>
 
 <a href="https://maps.app.goo.gl/Kjtn8bB1ppJVdCCVA?g_st=iw"
-   class="nav-btn"
-   target="_blank">
-   Navigate
+class="nav-btn"
+target="_blank">
+Navigate
 </a>
 </div>
+
+<!-- Dinner Section -->
+<div class="divider"></div>
+
+<div class="divine-block">
+<h3>Dinner</h3>
+<p>On Friday, 6th March 2026</p>
+<p class="highlight-time">From 7:00 p.m.</p>
+<p>At the Marriage Venue</p>
+</div>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-<h2 style="font-family:'Cinzel',serif;margin-bottom:20px;">
-Vara Prasad & Mythri
-</h2>
-<p style="letter-spacing:3px;">
-BLESS THE COUPLE WITH YOUR PRESENCE
+<h3 style="font-family:'Cinzel',serif; letter-spacing:3px;">
+Invited by
+</h3>
+
+<p style="margin-top:20px; font-size:20px; color:white;">
+Sri Kolli Tata Babu & Smt. Aruna
 </p>
 </footer>
 
