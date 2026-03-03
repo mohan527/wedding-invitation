@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---primary:#F1E8D8;      /* Ivory */
---accent:#BFA46F;       /* Royal Bronze */
+--primary:#F1E8D8;
+--accent:#BFA46F;
 --soft:#D8C9A6;
 --white:#ffffff;
 }
@@ -23,7 +23,6 @@ url("Full background .jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-background-repeat:no-repeat;
 font-family:'Cormorant Garamond',serif;
 color:var(--primary);
 overflow-x:hidden;
@@ -70,19 +69,39 @@ background:var(--accent);
 color:black;
 }
 
-/* ===== GENERAL SECTIONS ===== */
+/* ===== SECTION ===== */
 section, header, footer{
 padding:60px 20px;
 text-align:center;
-background:transparent;
 }
 
-/* ===== TITLES ===== */
-.section-title{
+/* ===== BRIDE & GROOM STYLE ===== */
+.role-text{
+font-family:'Great Vibes', cursive;
+font-size:28px;
+color:var(--soft);
+margin-bottom:10px;
+}
+
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(34px,7vw,60px);
+color:var(--white);
+line-height:1.1;
+margin:10px 0;
+}
+
+.hero-and{
+display:block;
+color:var(--accent);
 font-family:'Cinzel',serif;
-font-size:26px;
-letter-spacing:4px;
-margin-bottom:25px;
+}
+
+.ceremony-text{
+letter-spacing:3px;
+font-size:14px;
+color:var(--accent);
+margin-top:10px;
 }
 
 /* ===== COUNTDOWN ===== */
@@ -105,35 +124,7 @@ letter-spacing:2px;
 color:var(--soft);
 }
 
-/* ===== HERO ===== */
-.shloka{
-font-size:16px;
-color:var(--soft);
-max-width:600px;
-margin:0 auto 15px;
-}
-
-.hero-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(34px,7vw,60px);
-color:var(--white);
-line-height:1.1;
-margin:10px 0;
-}
-
-.hero-and{
-display:block;
-color:var(--accent);
-font-family:'Cinzel',serif;
-}
-
-.ceremony-text{
-letter-spacing:3px;
-font-size:14px;
-color:var(--accent);
-}
-
-/* ===== DIVINE DETAILS ===== */
+/* ===== DIVINE ===== */
 .divine-block{
 margin:30px 0;
 }
@@ -189,8 +180,13 @@ line-height:1.6;
 <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
 </div>
 
+<!-- AUDIO -->
+<audio id="bg-music" loop>
+<source src="wedding background.mp3" type="audio/mpeg">
+</audio>
+
 <section>
-<h2 class="section-title">Sacred Countdown</h2>
+<h2 style="font-family:'Cinzel',serif;letter-spacing:4px;">Sacred Countdown</h2>
 <div class="countdown-container">
 <div><div class="count-num" id="days"></div><div class="count-label">Days</div></div>
 <div><div class="count-num" id="hours"></div><div class="count-label">Hours</div></div>
@@ -200,10 +196,7 @@ line-height:1.6;
 </section>
 
 <header>
-<p class="shloka">
-"Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,
-Mangalam Pundari Kaksha, Mangalaye Tano Hari."
-</p>
+<div class="role-text">Bride & Groom</div>
 
 <h1 class="hero-title">
 Vara Prasad
@@ -217,7 +210,7 @@ WEDDING CEREMONY • 06.03.2026
 </header>
 
 <section>
-<h2 class="section-title">Divine Union</h2>
+<h2 style="font-family:'Cinzel',serif;letter-spacing:4px;">Divine Union</h2>
 
 <div class="divine-block">
 <h3>Sumuhurtham</h3>
@@ -260,6 +253,12 @@ function startApp(){
 document.getElementById('loader').style.opacity='0';
 setTimeout(()=>{
 document.getElementById('loader').style.display='none';
+
+var music = document.getElementById('bg-music');
+music.play().catch(function(error){
+console.log("Autoplay blocked:", error);
+});
+
 },1000);
 }
 
@@ -268,6 +267,7 @@ const weddingDate=new Date("March 6, 2026 23:26:00").getTime();
 setInterval(()=>{
 const now=new Date().getTime();
 const distance=weddingDate-now;
+
 document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
 document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
