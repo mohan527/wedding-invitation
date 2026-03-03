@@ -5,24 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
-<link rel="preload" as="image" href="Full background .jpg">
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---gold:#D4AF37;
---gold-light:#f5d9a8;
---black:#0d0d0d;
+--gold:#C6A75E;
+--gold-light:#E8D3A1;
 --white:#ffffff;
+--black:#0d0d0d;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-background:var(--black);
-color:var(--gold);
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("Full background .jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:scroll;
 font-family:'Cormorant Garamond',serif;
+color:var(--gold);
 overflow-x:hidden;
 }
 
@@ -41,7 +44,7 @@ transition:opacity 1s ease;
 }
 
 .monogram{
-font-size:90px;
+font-size:85px;
 color:var(--gold);
 animation:glow 2s infinite alternate;
 }
@@ -67,26 +70,18 @@ background:var(--gold);
 color:black;
 }
 
-/* ===== BACKGROUND ===== */
-.shared-bg{
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url("Full background .jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
+/* ===== SECTION TITLES ===== */
+.section-title{
+font-family:'Cinzel',serif;
+font-size:24px;
+letter-spacing:4px;
+margin-bottom:20px;
 }
 
 /* ===== COUNTDOWN ===== */
 .countdown{
 padding:50px 20px 30px;
 text-align:center;
-}
-
-.section-title{
-font-family:'Cinzel',serif;
-font-size:26px;
-letter-spacing:5px;
-margin-bottom:25px;
 }
 
 .countdown-container{
@@ -98,8 +93,8 @@ flex-wrap:wrap;
 
 .count-num{
 font-family:'Playfair Display',serif;
-font-size:38px;
-color:white;
+font-size:36px;
+color:var(--white);
 }
 
 .count-label{
@@ -109,18 +104,12 @@ letter-spacing:2px;
 
 /* ===== HERO ===== */
 .hero{
-padding:40px 20px 20px;
+padding:30px 20px 20px;
 text-align:center;
-animation:fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 .shloka{
-font-size:17px;
+font-size:16px;
 color:var(--gold-light);
 max-width:600px;
 margin:0 auto 15px;
@@ -128,8 +117,8 @@ margin:0 auto 15px;
 
 .hero-title{
 font-family:'Playfair Display',serif;
-font-size:clamp(34px,7vw,60px);
-color:white;
+font-size:clamp(32px,7vw,55px);
+color:var(--white);
 line-height:1.1;
 margin:5px 0;
 }
@@ -157,7 +146,7 @@ margin-top:5px;
 
 /* ===== DIVINE SECTION ===== */
 .divine-section{
-padding:40px 20px 50px;
+padding:35px 20px 50px;
 text-align:center;
 }
 
@@ -167,18 +156,18 @@ margin:25px 0;
 
 .divine-block h3{
 letter-spacing:3px;
-margin-bottom:8px;
+margin-bottom:6px;
 }
 
 .divine-block p{
-font-size:18px;
-color:white;
+font-size:17px;
+color:var(--white);
 margin:3px 0;
 }
 
 .highlight-time{
 font-family:'Playfair Display',serif;
-font-size:30px;
+font-size:28px;
 color:var(--gold-light);
 }
 
@@ -192,17 +181,18 @@ text-decoration:none;
 letter-spacing:2px;
 }
 
+/* ===== FOOTER ===== */
 footer{
-padding:50px 20px;
+padding:45px 20px;
 text-align:center;
 background:#111;
 }
 
 footer img{
-width:100px;
+width:95px;
 border-radius:50%;
 border:2px solid var(--gold);
-margin-bottom:15px;
+margin-bottom:12px;
 }
 </style>
 </head>
@@ -218,7 +208,7 @@ margin-bottom:15px;
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
 
-<section class="countdown shared-bg">
+<section class="countdown">
 <h2 class="section-title">Sacred Countdown</h2>
 <div class="countdown-container">
 <div><div class="count-num" id="days"></div><div class="count-label">Days</div></div>
@@ -228,7 +218,7 @@ margin-bottom:15px;
 </div>
 </section>
 
-<header class="hero shared-bg">
+<header class="hero">
 <p class="shloka">
 "Mangalam Bhagwan Vishnu, Mangalam Garunadhwaja,
 Mangalam Pundari Kaksha, Mangalaye Tano Hari."
@@ -247,7 +237,7 @@ WEDDING CEREMONY • 06.03.2026
 </p>
 </header>
 
-<section class="divine-section shared-bg">
+<section class="divine-section">
 <h2 class="section-title">Divine Union</h2>
 
 <div class="divine-block">
@@ -274,8 +264,8 @@ WEDDING CEREMONY • 06.03.2026
 
 <footer>
 <img src="parents.jpg" alt="Invited By">
-<h3 style="letter-spacing:3px;">Invited by</h3>
-<p style="color:white; margin-top:10px;">
+<h3>Invited by</h3>
+<p style="color:white;">
 Sri Kolli Tata Babu & Smt. Aruna
 </p>
 </footer>
@@ -294,7 +284,6 @@ const weddingDate=new Date("March 6, 2026 23:26:00").getTime();
 setInterval(()=>{
 const now=new Date().getTime();
 const distance=weddingDate-now;
-
 document.getElementById("days").innerText=Math.floor(distance/(1000*60*60*24));
 document.getElementById("hours").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 document.getElementById("minutes").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
