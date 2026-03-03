@@ -27,43 +27,46 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* ===== SHARED BACKGROUND ===== */
-.shared-bg{
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url("Full background .jpg");
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-}
-
-/* ================= LOADER ================= */
+/* ===== LOADER ===== */
 #loader{
 position:fixed;
-top:0; left:0;
-width:100%; height:100%;
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url("Full background .jpg");
-background-size:cover;
-background-position:center;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#0d0d0d;
 display:flex;
-justify-content:center;
-align-items:flex-start;
-padding-top:120px;
 flex-direction:column;
+justify-content:center;
+align-items:center;
 z-index:9999;
 transition:opacity 1s ease;
 }
 
 .monogram{
 font-family:'Cinzel',serif;
-font-size:65px;
+font-size:90px;
 color:var(--gold);
+animation:glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px var(--gold),
+0 0 20px var(--gold),
+0 0 30px #b8902e;
+}
+to{
+text-shadow:0 0 20px var(--gold-light),
+0 0 40px var(--gold-light),
+0 0 60px var(--gold);
+}
 }
 
 .enter-btn{
-margin-top:30px;
-padding:12px 40px;
-border:1px solid var(--gold);
+margin-top:40px;
+padding:14px 45px;
+border:2px solid var(--gold);
 background:transparent;
 color:var(--gold);
 letter-spacing:4px;
@@ -74,9 +77,19 @@ transition:0.4s;
 .enter-btn:hover{
 background:var(--gold);
 color:black;
+box-shadow:0 0 20px var(--gold);
 }
 
-/* ================= COUNTDOWN ================= */
+/* ===== SHARED BACKGROUND ===== */
+.shared-bg{
+background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url("Full background .jpg");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* ===== COUNTDOWN ===== */
 .countdown{
 padding:80px 20px 60px;
 text-align:center;
@@ -101,7 +114,7 @@ letter-spacing:3px;
 font-size:12px;
 }
 
-/* ================= HERO ================= */
+/* ===== HERO ===== */
 .hero{
 height:100vh;
 display:flex;
@@ -140,7 +153,7 @@ border:2px solid var(--gold);
 box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* ================= DIVINE UNION ================= */
+/* ===== DIVINE SECTION ===== */
 .divine-section{
 padding:140px 20px;
 text-align:center;
@@ -211,11 +224,11 @@ border-top:1px solid var(--gold);
 
 <!-- LOADER -->
 <div id="loader">
-<div class="monogram">&#x1F549;</div>
+<div class="monogram">ॐ</div>
 <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
 </div>
 
-<!-- MUSIC (UNCHANGED) -->
+<!-- MUSIC -->
 <audio id="bg-music" loop>
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
@@ -223,7 +236,6 @@ border-top:1px solid var(--gold);
 <!-- COUNTDOWN -->
 <section class="countdown shared-bg">
 <h2 class="section-title">Sacred Countdown</h2>
-
 <div class="countdown-container">
 <div><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
 <div><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
@@ -269,7 +281,6 @@ WEDDING CEREMONY • 06.03.2026
 <h3>The Mandapam</h3>
 <p>S-Convention Hall</p>
 <p>Y Junction, Vizianagaram</p>
-
 <a href="https://maps.app.goo.gl/Kjtn8bB1ppJVdCCVA?g_st=iw"
 class="nav-btn"
 target="_blank">
@@ -277,7 +288,6 @@ Navigate
 </a>
 </div>
 
-<!-- Dinner Section -->
 <div class="divider"></div>
 
 <div class="divine-block">
@@ -289,12 +299,10 @@ Navigate
 
 </section>
 
-<!-- FOOTER -->
 <footer>
 <h3 style="font-family:'Cinzel',serif; letter-spacing:3px;">
 Invited by
 </h3>
-
 <p style="margin-top:20px; font-size:20px; color:white;">
 Sri Kolli Tata Babu & Smt. Aruna
 </p>
