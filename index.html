@@ -18,12 +18,11 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("Full background .jpg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
-background-attachment:scroll;
 font-family:'Cormorant Garamond',serif;
 color:var(--gold);
 overflow-x:hidden;
@@ -44,7 +43,7 @@ transition:opacity 1s ease;
 }
 
 .monogram{
-font-size:85px;
+font-size:90px;
 color:var(--gold);
 animation:glow 2s infinite alternate;
 }
@@ -104,8 +103,14 @@ letter-spacing:2px;
 
 /* ===== HERO ===== */
 .hero{
-padding:30px 20px 20px;
+padding:35px 20px 20px;
 text-align:center;
+animation:fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 .shloka{
@@ -135,6 +140,7 @@ max-width:320px;
 margin:15px 0 10px;
 border-radius:8px;
 border:2px solid var(--gold);
+box-shadow:0 10px 25px rgba(0,0,0,0.6);
 }
 
 .ceremony-text{
@@ -181,18 +187,28 @@ text-decoration:none;
 letter-spacing:2px;
 }
 
-/* ===== FOOTER ===== */
+/* ===== PREMIUM FOOTER ===== */
 footer{
-padding:45px 20px;
+padding:60px 20px;
 text-align:center;
-background:#111;
+background:rgba(0,0,0,0.35);
+backdrop-filter: blur(3px);
+border-top:1px solid rgba(198,167,94,0.4);
 }
 
 footer img{
-width:95px;
+width:100px;
 border-radius:50%;
 border:2px solid var(--gold);
-margin-bottom:12px;
+margin-bottom:15px;
+}
+
+.invite-line{
+max-width:600px;
+margin:20px auto 0;
+font-size:16px;
+color:var(--gold-light);
+line-height:1.6;
 }
 </style>
 </head>
@@ -264,9 +280,13 @@ WEDDING CEREMONY • 06.03.2026
 
 <footer>
 <img src="parents.jpg" alt="Invited By">
-<h3>Invited by</h3>
+<h3 style="letter-spacing:3px;">Invited by</h3>
 <p style="color:white;">
 Sri Kolli Tata Babu & Smt. Aruna
+</p>
+
+<p class="invite-line">
+With immense joy in our hearts, we cordially invite you to grace the wedding ceremony and bless the couple with your cherished presence.
 </p>
 </footer>
 
