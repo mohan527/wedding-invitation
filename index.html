@@ -3,38 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Royal Wedding | Vara Prasad & Mythri</title>
+<title>Kolli's Invitation | Vara Prasad & Mythri</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
---primary:#F1E8D8;
---accent:#BFA46F;
---soft:#D8C9A6;
+--ivory:#F4EDE1;
+--maroon:#8B2E3A;
+--gold:#C6A75E;
+--soft:#E8D9C5;
 --white:#ffffff;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
 url("Full background .jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
-background-repeat:no-repeat;
 font-family:'Cormorant Garamond',serif;
-color:var(--primary);
+color:var(--ivory);
 overflow-x:hidden;
 }
 
-/* ===== LOADER ===== */
+/* ===== LOADER / INTRO ===== */
 #loader{
 position:fixed;
-top:0;left:0;
-width:100%;height:100%;
-background:#0d0d0d;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url("Full background .jpg");
+background-size:cover;
+background-position:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -44,33 +50,40 @@ transition:opacity 1s ease;
 }
 
 .monogram{
-font-size:90px;
-color:var(--accent);
-animation:glow 2s infinite alternate;
+font-size:100px;
+color:var(--gold);
+animation:glow 2s infinite alternate, float 3s ease-in-out infinite;
 }
 
 @keyframes glow{
-from{ text-shadow:0 0 10px var(--accent);}
-to{ text-shadow:0 0 40px var(--soft);}
+from{ text-shadow:0 0 10px var(--gold);}
+to{ text-shadow:0 0 40px var(--maroon);}
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 .enter-btn{
 margin-top:35px;
-padding:12px 40px;
-border:2px solid var(--accent);
+padding:14px 45px;
+border:2px solid var(--gold);
 background:transparent;
-color:var(--accent);
+color:var(--gold);
 letter-spacing:3px;
+font-family:'Cinzel',serif;
 cursor:pointer;
 transition:.4s;
 }
 
 .enter-btn:hover{
-background:var(--accent);
-color:black;
+background:var(--maroon);
+color:var(--white);
 }
 
-/* ===== GENERAL SECTIONS ===== */
+/* ===== GENERAL ===== */
 section, header, footer{
 padding:60px 20px;
 text-align:center;
@@ -82,6 +95,7 @@ font-family:'Cinzel',serif;
 font-size:26px;
 letter-spacing:4px;
 margin-bottom:25px;
+color:var(--maroon);
 }
 
 .countdown-container{
@@ -109,10 +123,10 @@ font-family:'Playfair Display',serif;
 font-size:clamp(42px,8vw,72px);
 line-height:1.1;
 margin:20px 0;
-background: linear-gradient(90deg, #F1E8D8, #BFA46F);
+background: linear-gradient(90deg, var(--gold), var(--ivory));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-text-shadow: 0 3px 15px rgba(0,0,0,0.6);
+text-shadow: 0 4px 18px rgba(0,0,0,0.6);
 letter-spacing:1px;
 }
 
@@ -120,9 +134,9 @@ letter-spacing:1px;
 display:block;
 font-family:'Cinzel',serif;
 font-size:30px;
-color:var(--accent);
+color:var(--maroon);
 margin:8px 0;
-text-shadow:0 0 12px rgba(191,164,111,0.6);
+text-shadow:0 0 10px rgba(139,46,58,0.6);
 }
 
 .hero-title::after{
@@ -130,16 +144,15 @@ content:"";
 display:block;
 width:120px;
 height:1px;
-background:var(--accent);
+background:var(--gold);
 margin:14px auto 0;
 opacity:0.6;
 }
 
-/* ===== CEREMONY TEXT ===== */
 .ceremony-text{
 letter-spacing:4px;
 font-size:14px;
-color:var(--accent);
+color:var(--gold);
 margin-top:15px;
 }
 
@@ -151,7 +164,7 @@ margin:30px 0;
 .divine-block h3{
 letter-spacing:3px;
 margin-bottom:8px;
-color:var(--accent);
+color:var(--maroon);
 }
 
 .divine-block p{
@@ -163,22 +176,22 @@ margin:4px 0;
 .highlight-time{
 font-family:'Playfair Display',serif;
 font-size:28px;
-color:var(--soft);
+color:var(--gold);
 }
 
 .nav-btn{
 display:inline-block;
 margin-top:12px;
 padding:8px 25px;
-border:1px solid var(--accent);
-color:var(--accent);
+border:1px solid var(--gold);
+color:var(--gold);
 text-decoration:none;
 transition:.3s;
 }
 
 .nav-btn:hover{
-background:var(--accent);
-color:black;
+background:var(--maroon);
+color:white;
 }
 
 /* ===== FOOTER ===== */
@@ -198,11 +211,13 @@ line-height:1.6;
 
 <body>
 
+<!-- INTRO SCREEN -->
 <div id="loader">
 <div class="monogram">ॐ</div>
-<button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
+<button class="enter-btn" onclick="startApp()">Kolli’s Invitation</button>
 </div>
 
+<!-- MUSIC -->
 <audio id="bg-music" loop>
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
@@ -255,7 +270,7 @@ WEDDING CEREMONY • 06.03.2026
 </section>
 
 <footer>
-<h3 style="letter-spacing:3px; color:var(--accent);">
+<h3 style="letter-spacing:3px; color:var(--maroon);">
 Invited by
 </h3>
 
