@@ -6,7 +6,7 @@
 <title>The Royal Wedding | Vara Prasad & Mythri</title>
 
 <!-- Preload Background Image -->
-<link rel="preload" as="image" href="Full background .JPG">
+<link rel="preload" as="image" href="https://raw.githubusercontent.com/mohan527/wedding-invitation/main/Full%20background.jpg">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;600;900&family=Cormorant+Garamond:wght@300;600&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
@@ -28,9 +28,10 @@ overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* ===== SHARED BACKGROUND (Improved Visibility) ===== */
+/* ===== SHARED BACKGROUND ===== */
 .shared-bg{
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url("Full background .JPG");
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+url("https://raw.githubusercontent.com/mohan527/wedding-invitation/main/Full%20background.jpg");
 background-size:cover;
 background-position:center;
 background-attachment:fixed;
@@ -41,7 +42,8 @@ background-attachment:fixed;
 position:fixed;
 top:0; left:0;
 width:100%; height:100%;
-background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url("Full background .JPG");
+background: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), 
+url("https://raw.githubusercontent.com/mohan527/wedding-invitation/main/Full%20background.jpg");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -196,7 +198,6 @@ background:var(--gold);
 color:black;
 }
 
-/* ================= FOOTER ================= */
 footer{
 padding:100px 20px;
 text-align:center;
@@ -208,7 +209,6 @@ border-top:1px solid var(--gold);
 
 <body>
 
-<!-- LOADER -->
 <div id="loader">
 <div class="monogram">&#x1F549;</div>
 <button class="enter-btn" onclick="startApp()">Enter Ceremony</button>
@@ -218,34 +218,17 @@ border-top:1px solid var(--gold);
 <source src="wedding background.mp3" type="audio/mpeg">
 </audio>
 
-<!-- COUNTDOWN -->
 <section class="countdown shared-bg">
 <h2 class="section-title">Sacred Countdown</h2>
 
 <div class="countdown-container">
-<div>
-<div class="count-num" id="days">00</div>
-<div class="count-label">Days</div>
-</div>
-
-<div>
-<div class="count-num" id="hours">00</div>
-<div class="count-label">Hours</div>
-</div>
-
-<div>
-<div class="count-num" id="minutes">00</div>
-<div class="count-label">Minutes</div>
-</div>
-
-<div>
-<div class="count-num" id="seconds">00</div>
-<div class="count-label">Seconds</div>
-</div>
+<div><div class="count-num" id="days">00</div><div class="count-label">Days</div></div>
+<div><div class="count-num" id="hours">00</div><div class="count-label">Hours</div></div>
+<div><div class="count-num" id="minutes">00</div><div class="count-label">Minutes</div></div>
+<div><div class="count-num" id="seconds">00</div><div class="count-label">Seconds</div></div>
 </div>
 </section>
 
-<!-- HERO -->
 <header class="hero shared-bg">
 
 <p class="shloka">
@@ -267,7 +250,6 @@ WEDDING CEREMONY • 06.03.2026
 
 </header>
 
-<!-- DIVINE UNION -->
 <section class="divine-section shared-bg">
 
 <h2 class="section-title">Divine Union</h2>
@@ -293,10 +275,8 @@ WEDDING CEREMONY • 06.03.2026
 </a>
 
 </div>
-
 </section>
 
-<!-- FOOTER -->
 <footer>
 <h2 style="font-family:'Cinzel',serif;margin-bottom:20px;">
 Vara Prasad & Mythri
